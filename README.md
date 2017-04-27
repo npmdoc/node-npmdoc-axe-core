@@ -1,6 +1,6 @@
 # npmdoc-axe-core
 
-#### api documentation for  [axe-core (v2.1.7)](https://github.com/dequelabs/axe-core#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-axe-core.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-axe-core) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-axe-core.svg)](https://travis-ci.org/npmdoc/node-npmdoc-axe-core)
+#### basic api documentation for  [axe-core (v2.2.0)](https://github.com/dequelabs/axe-core#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-axe-core.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-axe-core) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-axe-core.svg)](https://travis-ci.org/npmdoc/node-npmdoc-axe-core)
 
 #### Accessibility engine for automated Web UI testing
 
@@ -57,34 +57,32 @@
         "chai": "~3.5.0",
         "clone": "~1.0.2",
         "dot": "~1.0.3",
-        "grunt": "~0.4.5",
+        "grunt": "^1.0.1",
         "grunt-babel": "^6.0.0",
-        "grunt-cli": "^1.2.0",
-        "grunt-contrib-clean": "~1.0.0",
-        "grunt-contrib-concat": "~1.0.0",
-        "grunt-contrib-connect": "~1.0.1",
-        "grunt-contrib-copy": "~1.0.0",
-        "grunt-contrib-jshint": "^1.0.0",
-        "grunt-contrib-uglify": "~1.0.1",
-        "grunt-contrib-watch": "~1.0.0",
-        "grunt-mocha": "~0.4.13",
-        "grunt-parallel": "^0.4.1",
-        "grunt-snyk": "^0.1.0",
+        "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-connect": "^1.0.2",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-jshint": "^1.1.0",
+        "grunt-contrib-uglify": "^2.1.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-mocha": "^1.0.4",
+        "grunt-parallel": "^0.5.1",
+        "grunt-retire": "^1.0.7",
         "html-entities": "^1.2.0",
         "jquery": "^3.0.0",
         "less": "~2.6.1",
-        "mocha": "~2.4.5",
-        "phantomjs-prebuilt": "~2.1.7",
+        "mocha": "^3.2.0",
         "promise": "~7.1.1",
         "revalidator": "~0.3.1",
-        "selenium-webdriver": "~2.53.1"
+        "selenium-webdriver": "~3.4.0"
     },
     "directories": {},
     "dist": {
-        "shasum": "4f66f2b3ee3b58ec2d3db4339dd124c5b33b79c3",
-        "tarball": "https://registry.npmjs.org/axe-core/-/axe-core-2.1.7.tgz"
+        "shasum": "00b410b3fc899207d4f2f8e3753cff150d34e4bb",
+        "tarball": "https://registry.npmjs.org/axe-core/-/axe-core-2.2.0.tgz"
     },
-    "gitHead": "400135cf9cf1fa45759be9235ea86a2885e80933",
+    "gitHead": "9955de7ec8d802070b6a73860329b6d575cb1786",
     "homepage": "https://github.com/dequelabs/axe-core#readme",
     "keywords": [
         "Accessibility",
@@ -123,7 +121,8 @@
         "test-fast": "grunt test-fast"
     },
     "typings": "axe.d.ts",
-    "version": "2.1.7"
+    "version": "2.2.0",
+    "bin": {}
 }
 ```
 
