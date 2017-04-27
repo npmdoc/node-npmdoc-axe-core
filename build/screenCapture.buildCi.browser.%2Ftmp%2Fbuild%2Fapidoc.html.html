@@ -47,7 +47,7 @@
 }
 </style>
 <h1>api documentation for
-    <a href="https://github.com/dequelabs/axe-core#readme">axe-core (v2.1.7)</a>
+    <a href="https://github.com/dequelabs/axe-core#readme">axe-core (v2.2.0)</a>
 </h1>
 <h4>Accessibility engine for automated Web UI testing</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
@@ -213,6 +213,12 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">axe-core.</span>utils.DqElement.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">axe-core.</span>utils.performanceTimer</span>
 
         </li>
 
@@ -520,6 +526,12 @@
 
         </li>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">axe-core.utils.</span>performanceTimer</span>
+
+        </li>
+
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.axe-core.utils.DqElement">module axe-core.utils.DqElement</a><ol>
@@ -550,6 +562,91 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.DqElement.prototype.toJSON">
             function <span class="apidocSignatureSpan">axe-core.utils.DqElement.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.axe-core.utils.performanceTimer">module axe-core.utils.performanceTimer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.auditEnd">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>auditEnd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.auditStart">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>auditStart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.end">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.logMeasures">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>logMeasures
+            <span class="apidocSignatureSpan">(measureName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.mark">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>mark
+            <span class="apidocSignatureSpan">(markName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.measure">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>measure
+            <span class="apidocSignatureSpan">(measureName, startMark, endMark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.reset">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.start">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axe-core.utils.performanceTimer.timeElapsed">
+            function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>timeElapsed
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -641,10 +738,17 @@ axe.<span class="apidocCodeKeywordSpan">_load</span>({
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function runRules(context, options, resolve, reject) {
   'use strict';
-  context = new Context(context);
+  try {
+    context = new Context(context);
+  } catch (e) {
+    return reject(e);
+  }
   var q = axe.utils.queue();
   var audit = axe._audit;
-  if (context.frames.length) {
+  if (options.performanceTimer) {
+    axe.utils.performanceTimer.auditStart();
+  }
+  if (context.frames.length &amp;&amp; options.iframes !== false) {
     q.defer(function(res, rej) {
       axe.utils.collectResultsFromFrames(context, options, 'rules', null, res, rej);
     });
@@ -654,13 +758,14 @@ axe.<span class="apidocCodeKeywordSpan">_load</span>({
   });
   q.then(function(data) {
     try {
-      // Add wrapper object so that we may use the same "merge" function for results from inside and outside frames
+      if (options.performanceTimer) {
+        axe.utils.performanceTimer.auditEnd();
+      }
       var results = axe.utils.mergeResults(data.map(function(d) {
         return {
           results: d
         };
       }));
-      // after should only run once, so ensure we are in the top level window
       if (context.initiator) {
         results = audit.after(results, options);
         results.forEach(axe.utils.publishMetaData);
@@ -677,21 +782,21 @@ axe.<span class="apidocCodeKeywordSpan">_load</span>({
   }).catch(reject);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  }
-  var audit = axe._audit;
-  if (!audit) {
-    throw new Error('No audit configured');
-  }
-  options.reporter = options.reporter || audit.reporter || 'v2';
-  var reporter = axe.getReporter(options.reporter);
-  axe.<span class="apidocCodeKeywordSpan">_runRules</span>(context, options, function(results) {
-    var res = reporter(results, options, callback);
-    if (res !== undefined) {
-      callback(res);
+  throw new Error('No audit configured');
+}
+options.reporter = options.reporter || audit.reporter || 'v2';
+if (options.performanceTimer) {
+  axe.utils.performanceTimer.start();
+}
+var reporter = axe.getReporter(options.reporter);
+axe.<span class="apidocCodeKeywordSpan">_runRules</span>(context, options, function(results) {
+  var res = reporter(results, options, callback);
+  if (res !== undefined) {
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.end();
     }
-  }, axe.log);
-};
-'use strict';
+    callback(res);
+  }
 ...</pre></li>
     </ul>
 
@@ -718,15 +823,35 @@ axe.<span class="apidocCodeKeywordSpan">_load</span>({
     throw new Error('No audit configured');
   }
   options.reporter = options.reporter || audit.reporter || 'v2';
+  if (options.performanceTimer) {
+    axe.utils.performanceTimer.start();
+  }
   var reporter = axe.getReporter(options.reporter);
   axe._runRules(context, options, function(results) {
     var res = reporter(results, options, callback);
     if (res !== undefined) {
+      if (options.performanceTimer) {
+        axe.utils.performanceTimer.end();
+      }
       callback(res);
     }
   }, axe.log);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Installing aXe to run accessibility tests in your TypeScript project should be as simple as importing the module:
+
+```javascript
+import * as axe from 'axe-core';
+
+describe('Module', () =&gt; {
+	it('should have no accessibility violations', () =&gt; {
+		axe.<span class="apidocCodeKeywordSpan">a11yCheck</span>(compiledFixture, {}, (results) =&gt; {
+			expect(results.violations.length).toBe(0);
+		});
+	});
+});
+```
+...</pre></li>
     </ul>
 
 
@@ -746,13 +871,13 @@ axe.<span class="apidocCodeKeywordSpan">_load</span>({
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+      delete ruleResult.result;
       return ruleResult;
     });
   });
   return resultObject;
 };
 'use strict';
-/*global helpers */
 axe.<span class="apidocCodeKeywordSpan">addReporter</span>('na', function(results, options, callback) {
   'use strict';
   if (typeof options === 'function') {
@@ -779,7 +904,6 @@ axe.<span class="apidocCodeKeywordSpan">addReporter</span>('na', function(result
     throw new Error('No audit configured');
   }
   var q = axe.utils.queue();
-  // If a plugin fails it's cleanup, we still want the others to run
   var cleanupErrors = [];
   Object.keys(axe.plugins).forEach(function(key) {
     q.defer(function(res) {
@@ -867,21 +991,21 @@ axe.utils.toArray(document.querySelectorAll('frame, iframe')).forEach(function(f
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- Audit.prototype.addRule = function(spec) {
-   'use strict';
-   if (spec.metadata) {
-     this.data.rules[spec.id] = spec.metadata;
-   }
-   var rule = this.getRule(spec.id);
-   if (rule) {
-     rule.<span class="apidocCodeKeywordSpan">configure</span>(spec);
-   } else {
-     this.rules.push(new Rule(spec, this));
-   }
- };
- /**
-* Adds a new check to the Audit.  If a Check with specified ID already exists, it will be
-* reconfigured
+Audit.prototype.addRule = function(spec) {
+  'use strict';
+  if (spec.metadata) {
+    this.data.rules[spec.id] = spec.metadata;
+  }
+  var rule = this.getRule(spec.id);
+  if (rule) {
+    rule.<span class="apidocCodeKeywordSpan">configure</span>(spec);
+  } else {
+    this.rules.push(new Rule(spec, this));
+  }
+};
+Audit.prototype.addCheck = function(spec) {
+  'use strict';
+  var metadata = spec.metadata;
 ...</pre></li>
     </ul>
 
@@ -905,21 +1029,21 @@ axe.utils.toArray(document.querySelectorAll('frame, iframe')).forEach(function(f
   return defaultReporter;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    options = {};
-  }
-  var audit = axe._audit;
-  if (!audit) {
-    throw new Error('No audit configured');
-  }
-  options.reporter = options.reporter || audit.reporter || 'v2';
-  var reporter = axe.<span class="apidocCodeKeywordSpan">getReporter</span>(options.reporter);
-  axe._runRules(context, options, function(results) {
-    var res = reporter(results, options, callback);
-    if (res !== undefined) {
-      callback(res);
+if (!audit) {
+  throw new Error('No audit configured');
+}
+options.reporter = options.reporter || audit.reporter || 'v2';
+if (options.performanceTimer) {
+  axe.utils.performanceTimer.start();
+}
+var reporter = axe.<span class="apidocCodeKeywordSpan">getReporter</span>(options.reporter);
+axe._runRules(context, options, function(results) {
+  var res = reporter(results, options, callback);
+  if (res !== undefined) {
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.end();
     }
-  }, axe.log);
-};
+    callback(res);
 ...</pre></li>
     </ul>
 
@@ -952,7 +1076,23 @@ axe.utils.toArray(document.querySelectorAll('frame, iframe')).forEach(function(f
     };
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Description
+
+Returns a list of all rules with their ID and description
+
+#### Synopsis
+
+`axe.<span class="apidocCodeKeywordSpan">getRules</span>([Tag Name 1, Tag Name 2...]);`
+
+#### Parameters
+
+* `tags` - **optional** Array of tags used to filter returned rules.  If omitted, it will return all rules.
+
+**Returns:** Array of rules that match the input filter with each entry having a format of `{ruleId: &lt;id&gt;, description
+: &lt;desc&gt;}`
+...</pre></li>
     </ul>
 
 
@@ -967,26 +1107,26 @@ axe.utils.toArray(document.querySelectorAll('frame, iframe')).forEach(function(f
     <li>description and source-code<pre class="apidocCodePre">log = function () {
   'use strict';
   if ((typeof console === 'undefined' ? 'undefined' : _typeof(console)) === 'object' &amp;&amp; console.log) {
-    // IE does not support console.log.apply
     Function.prototype.apply.call(console.log, console, arguments);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        results = audit.after(results, options);
-        results.forEach(axe.utils.publishMetaData);
-        results = results.map(axe.utils.finalizeRuleResult);
-      }
-      try {
-        resolve(results);
-      } catch (e) {
-        axe.<span class="apidocCodeKeywordSpan">log</span>(e);
-      }
-    } catch (e) {
-      reject(e);
-    }
-  }).catch(reject);
+  reject(new SupportError({
+    cause: error,
+    ruleId: this.id
+  }));
+  return;
 }
-axe._runRules = runRules;
+if (options.performanceTimer) {
+  axe.<span class="apidocCodeKeywordSpan">log</span>('gather (', nodes.length, '):', axe.utils.performanceTimer
+.timeElapsed() + 'ms');
+}
+nodes.forEach(function(node) {
+  q.defer(function(resolveNode, rejectNode) {
+    var checkQueue = axe.utils.queue();
+    checkQueue.defer(function(res, rej) {
+      _this.runChecks('any', node, options, res, rej);
+    });
 ...</pre></li>
     </ul>
 
@@ -1003,7 +1143,25 @@ axe._runRules = runRules;
   'use strict';
   axe.plugins[plugin.id] = new Plugin(plugin);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Plugins currently support two functions, a "run" function and a "collect" function. Together these functions
+ can be combined to implement complex behaviors on top of the aXe system.
+
+In order to create such a plugin, we need to implement the "run" function for the plugin, and the command that registers
+ and executes the "run" function within each iframe on the page that contains aXe. Lets look at what a noop implementation
+ of this run function would look like:
+
+#### Basic plugin
+
+```javascript
+axe.<span class="apidocCodeKeywordSpan">registerPlugin</span>({
+	id: 'doStuff',
+	run: function (id, action, options, callback) {
+		var frames;
+		var q = axe.utils.queue();
+		var that = this;
+		frames = axe.utils.toArray(document.querySelectorAll('iframe, frame'));
+...</pre></li>
     </ul>
 
 
@@ -1023,7 +1181,23 @@ axe._runRules = runRules;
   }
   audit.resetRulesAndChecks();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### Description
+
+Override any previous calls to `axe.configure` and restore the configuration to the default configuration. Note: this will NOT unregister
+ any new rules or checks that were registered but will reset the configuration back to the default configuration for everything
+else.
+
+#### Synopsis
+
+```javascript
+axe.<span class="apidocCodeKeywordSpan">reset</span>();
+```
+
+#### Parameters
+
+None
+...</pre></li>
     </ul>
 
 
@@ -1044,8 +1218,10 @@ axe._runRules = runRules;
   context = args.context;
   options = args.options;
   callback = args.callback;
-  // set defaults:
   options.reporter = options.reporter || axe._audit.reporter || 'v1';
+  if (options.performanceTimer) {
+    axe.utils.performanceTimer.start();
+  }
   var p = void 0;
   var reject = noop;
   var resolve = noop;
@@ -1064,6 +1240,9 @@ axe._runRules = runRules;
       }
       resolve(results);
     };
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.end();
+    }
     try {
       var reporter = axe.getReporter(options.reporter);
       var results = reporter(rawResults, options, respond);
@@ -1081,21 +1260,21 @@ axe._runRules = runRules;
   return p;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-```html
-&lt;script src="node_modules/axe-core/axe.min.js" &gt;&lt;/script&gt;
-```
-
-Now insert calls at each point in your tests where a new piece of UI becomes visible or exposed:
-
-```js
-axe.<span class="apidocCodeKeywordSpan">run</span>(function (err, results) {
-	if (err) throw err;
-    ok(results.violations.length === 0, 'Should be no accessibility issues');
-    // complete the async call
-    ...
-});
-```
-## Supported Browsers
+      if (axe.utils.ruleShouldRun(rule, context, options)) {
+if (options.performanceTimer) {
+  var markEnd = 'mark_rule_end_' + rule.id;
+  var markStart = 'mark_rule_start_' + rule.id;
+  axe.utils.performanceTimer.mark(markStart);
+}
+q.defer(function(res, rej) {
+  rule.<span class="apidocCodeKeywordSpan">run</span>(context, options, function(out) {
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.mark(markEnd);
+      axe.utils.performanceTimer.measure('rule_' + rule.id, markStart, markEnd);
+    }
+    res(out);
+  }, function(err) {
+    if (!options.debug) {
 ...</pre></li>
     </ul>
 
@@ -1110,44 +1289,27 @@ axe.<span class="apidocCodeKeywordSpan">run</span>(function (err, results) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function DqElement(element, spec) {
   'use strict';
-  spec = spec || {};
-<span class="apidocCodeCommentSpan">  /**
-* A unique CSS selector for the element
-* @type {String}
-*/
-</span>  this.selector = spec.selector || [ axe.utils.getSelector(element) ];
-  /**
-* Xpath to the element
-*/
-  this.xpath = spec.xpath || [ axe.utils.getXpath(element) ];
-  /**
-* The generated HTML source code of the element
-* @type {String}
-*/
-  this.source = spec.source !== undefined ? spec.source : getSource(element);
-  /**
-* The element which this object is based off or the containing frame, used for sorting.
-* Excluded in toJSON method.
-* @type {HTMLElement}
-*/
-  this.element = element;
+  this._fromFrame = !!spec;
+  this.spec = spec || {};
+  this.source = this.spec.source !== undefined ? this.spec.source : getSource(element);
+  this._element = element;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-          });
-          result[r.type] = res;
-          if (res.length) {
-            hasResults = true;
-          }
-        });
-        if (hasResults) {
-          result.node = new axe.<span class="apidocCodeKeywordSpan">utils.DqElement</span>(node);
-          ruleResult.nodes.push(result);
-        }
+      });
+      result[r.type] = res;
+      if (res.length) {
+        hasResults = true;
       }
-      resolveNode();
-    }).catch(rejectNode);
-  });
-}
+    });
+    if (hasResults) {
+      result.node = new axe.<span class="apidocCodeKeywordSpan">utils.DqElement</span>(node);
+      ruleResult.nodes.push(result);
+    }
+  }
+  resolveNode();
+}).catch(function(err) {
+  return rejectNode(err);
+});
 ...</pre></li>
     </ul>
 
@@ -1165,23 +1327,25 @@ axe.<span class="apidocCodeKeywordSpan">run</span>(function (err, results) {
   post(win, topic, message, id, keepalive, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+      axe.log(errMsg);
       resolve(null);
     } else {
       reject(errMsg);
     }
   }, 0);
 }, 500);
-// send 'axe.ping' to the frame
 axe.<span class="apidocCodeKeywordSpan">utils.respondable</span>(win, 'axe.ping', null, undefined, function() {
   clearTimeout(timeout);
-  // Give aXe 30s to respond to 'axe.start'
   timeout = setTimeout(function() {
     reject(err('Axe in frame timed out', node));
   }, 3e4);
-  // send 'axe.start' and send the callback if it responded
   axe.utils.respondable(win, 'axe.start', parameters, undefined, function(data) {
+    clearTimeout(timeout);
+    if (data instanceof Error === false) {
 ...</pre></li>
     </ul>
+
+
 
 
 
@@ -1215,44 +1379,27 @@ axe.<span class="apidocCodeKeywordSpan">utils.respondable</span>(win, 'axe.ping'
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function DqElement(element, spec) {
   'use strict';
-  spec = spec || {};
-<span class="apidocCodeCommentSpan">  /**
-* A unique CSS selector for the element
-* @type {String}
-*/
-</span>  this.selector = spec.selector || [ axe.utils.getSelector(element) ];
-  /**
-* Xpath to the element
-*/
-  this.xpath = spec.xpath || [ axe.utils.getXpath(element) ];
-  /**
-* The generated HTML source code of the element
-* @type {String}
-*/
-  this.source = spec.source !== undefined ? spec.source : getSource(element);
-  /**
-* The element which this object is based off or the containing frame, used for sorting.
-* Excluded in toJSON method.
-* @type {HTMLElement}
-*/
-  this.element = element;
+  this._fromFrame = !!spec;
+  this.spec = spec || {};
+  this.source = this.spec.source !== undefined ? this.spec.source : getSource(element);
+  this._element = element;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-          });
-          result[r.type] = res;
-          if (res.length) {
-            hasResults = true;
-          }
-        });
-        if (hasResults) {
-          result.node = new axe.utils.<span class="apidocCodeKeywordSpan">DqElement</span>(node);
-          ruleResult.nodes.push(result);
-        }
+      });
+      result[r.type] = res;
+      if (res.length) {
+        hasResults = true;
       }
-      resolveNode();
-    }).catch(rejectNode);
-  });
-}
+    });
+    if (hasResults) {
+      result.node = new axe.utils.<span class="apidocCodeKeywordSpan">DqElement</span>(node);
+      ruleResult.nodes.push(result);
+    }
+  }
+  resolveNode();
+}).catch(function(err) {
+  return rejectNode(err);
+});
 ...</pre></li>
     </ul>
 
@@ -1273,25 +1420,24 @@ axe.<span class="apidocCodeKeywordSpan">utils.respondable</span>(win, 'axe.ping'
   var sorting = values.map(function(val) {
     return map.indexOf(val);
   }).sort();
-  // Stupid NodeJS array.sort functor doesn't work!!
   return map[sorting.pop()];
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+    return check.priority === nodeResult.priority;
   });
   nodeResult[type].forEach(function(check) {
     return impacts.push(check.impact);
   });
 });
-// for failed nodes, define the impact
 if (nodeResult.priority === axe.constants.FAIL_PRIO) {
   nodeResult.impact = axe.utils.<span class="apidocCodeKeywordSpan">aggregate</span>(axe.constants.impact, impacts);
 } else {
   nodeResult.impact = null;
 }
-// Delete the old result and priority properties
 anyAllNone(nodeResult, function(c) {
   delete c.result;
   delete c.priority;
+});
 ...</pre></li>
     </ul>
 
@@ -1305,19 +1451,14 @@ anyAllNone(nodeResult, function(c) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">aggregateChecks = function (nodeResOriginal) {
-  // Create a copy
   var nodeResult = Object.assign({}, nodeResOriginal);
-  // map each result value to a priority
   anyAllNone(nodeResult, function(check, type) {
     var i = checkMap.indexOf(check.result);
-    // default to cantTell
     check.priority = i !== -1 ? i : axe.constants.CANTTELL_PRIO;
     if (type === 'none') {
-      // For none, reverse the outcome
       check.priority = 4 - check.priority;
     }
   });
-  // Find the result with the highest priority
   var priorities = anyAllNone(nodeResult, function(c) {
     return c.priority;
   });
@@ -1325,12 +1466,9 @@ anyAllNone(nodeResult, function(c) {
     return Math.max(a, b);
   }, 0), priorities.none.reduce(function(a, b) {
     return Math.max(a, b);
-  }, 0), // get the lowest passing of 'any' defaulting
-  // to 0 by wrapping around 4 to 0 (inapplicable)
-  priorities.any.reduce(function(a, b) {
+  }, 0), priorities.any.reduce(function(a, b) {
     return Math.min(a, b);
   }, 4) % 4);
-  // Of each type, filter out all results not matching the final priority
   var impacts = [];
   checkTypes.forEach(function(type) {
     nodeResult[type] = nodeResult[type].filter(function(check) {
@@ -1340,38 +1478,35 @@ anyAllNone(nodeResult, function(c) {
       return impacts.push(check.impact);
     });
   });
-  // for failed nodes, define the impact
   if (nodeResult.priority === axe.constants.FAIL_PRIO) {
     nodeResult.impact = axe.utils.aggregate(axe.constants.impact, impacts);
   } else {
     nodeResult.impact = null;
   }
-  // Delete the old result and priority properties
   anyAllNone(nodeResult, function(c) {
     delete c.result;
     delete c.priority;
   });
-  // Convert the index to a result string value
   nodeResult.result = axe.constants.results[nodeResult.priority];
   delete nodeResult.priority;
   return nodeResult;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  */
-axe.utils.aggregateRule = function(subResults) {
-  var ruleResult = {};
-  // For each node, retrieve the result and impact
-  subResults = subResults.map(function(subResult) {
-    // Known result
-    if (subResult.any &amp;&amp; subResult.all &amp;&amp; subResult.none) {
-      return axe.utils.<span class="apidocCodeKeywordSpan">aggregateChecks</span>(subResult);
-    } else {
-      if (Array.isArray(subResult.node)) {
+};
+'use strict';
+(function() {
+  axe.utils.aggregateRule = function(subResults) {
+    var ruleResult = {};
+    subResults = subResults.map(function(subResult) {
+      if (subResult.any &amp;&amp; subResult.all &amp;&amp; subResult.none) {
+        return axe.utils.<span class="apidocCodeKeywordSpan">aggregateChecks</span>(subResult);
+      } else if (Array.isArray(subResult.node)) {
         return axe.utils.finalizeRuleResult(subResult);
       } else {
         throw new TypeError('Invalid Result type');
       }
-    }
+    });
+    var resultList = subResults.map(function(node) {
 ...</pre></li>
     </ul>
 
@@ -1386,24 +1521,20 @@ axe.utils.aggregateRule = function(subResults) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">aggregateResult = function (results) {
   var resultObject = {};
-  // Create an array for each type
   axe.constants.resultGroups.forEach(function(groupName) {
     return resultObject[groupName] = [];
   });
-  // Fill the array with nodes
   results.forEach(function(subResult) {
     if (subResult.error) {
       copyToGroup(resultObject, subResult, axe.constants.CANTTELL_GROUP);
+    } else if (subResult.result === axe.constants.NA) {
+      copyToGroup(resultObject, subResult, axe.constants.NA_GROUP);
     } else {
-      if (subResult.result === axe.constants.NA) {
-        copyToGroup(resultObject, subResult, axe.constants.NA_GROUP);
-      } else {
-        axe.constants.resultGroups.forEach(function(group) {
-          if (Array.isArray(subResult[group]) &amp;&amp; subResult[group].length &gt; 0) {
-            copyToGroup(resultObject, subResult, group);
-          }
-        });
-      }
+      axe.constants.resultGroups.forEach(function(group) {
+        if (Array.isArray(subResult[group]) &amp;&amp; subResult[group].length &gt; 0) {
+          copyToGroup(resultObject, subResult, group);
+        }
+      });
     }
   });
   return resultObject;
@@ -1438,37 +1569,28 @@ helpers.processAggregate = function(results, options) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">aggregateRule = function (subResults) {
   var ruleResult = {};
-  // For each node, retrieve the result and impact
   subResults = subResults.map(function(subResult) {
-    // Known result
     if (subResult.any &amp;&amp; subResult.all &amp;&amp; subResult.none) {
       return axe.utils.aggregateChecks(subResult);
+    } else if (Array.isArray(subResult.node)) {
+      return axe.utils.finalizeRuleResult(subResult);
     } else {
-      if (Array.isArray(subResult.node)) {
-        return axe.utils.finalizeRuleResult(subResult);
-      } else {
-        throw new TypeError('Invalid Result type');
-      }
+      throw new TypeError('Invalid Result type');
     }
   });
-  // Aggregate the result
   var resultList = subResults.map(function(node) {
     return node.result;
   });
   ruleResult.result = axe.utils.aggregate(axe.constants.results, resultList, ruleResult.result);
-  // Create an array for each type
   axe.constants.resultGroups.forEach(function(group) {
     return ruleResult[group] = [];
   });
-  // Fill the array with nodes
   subResults.forEach(function(subResult) {
     var groupName = axe.constants.resultGroupMap[subResult.result];
     ruleResult[groupName].push(subResult);
   });
-  // Take the highest impact of failed rules
   var failGroup = axe.constants.FAIL_GROUP;
   if (ruleResult[failGroup].length &gt; 0) {
-    // Get the impact of all violations
     var impactList = ruleResult[failGroup].map(function(failure) {
       return failure.impact;
     });
@@ -1479,21 +1601,21 @@ helpers.processAggregate = function(results, options) {
   return ruleResult;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- 'use strict';
- /**
-* Process rule results, grouping them by outcome
-* @param ruleResult {object}
-* @return {object}
-*/
- axe.utils.finalizeRuleResult = function(ruleResult) {
-   Object.assign(ruleResult, axe.utils.<span class="apidocCodeKeywordSpan">aggregateRule</span>(ruleResult.nodes));
-   delete ruleResult.nodes;
-   return ruleResult;
- };
- 'use strict';
- var _typeof = typeof Symbol === 'function' &amp;&amp; typeof Symbol.iterator === 'symbol' ? function(obj) {
-   return typeof obj;
- } : function(obj) {
+    try {
+      to[prop] = from[prop](to);
+    } catch (e) {}
+  });
+};
+'use strict';
+axe.utils.finalizeRuleResult = function(ruleResult) {
+  Object.assign(ruleResult, axe.utils.<span class="apidocCodeKeywordSpan">aggregateRule</span>(ruleResult.nodes));
+  delete ruleResult.nodes;
+  return ruleResult;
+};
+'use strict';
+var _typeof = typeof Symbol === 'function' &amp;&amp; typeof Symbol.iterator === 'symbol' ? function(obj) {
+  return typeof obj;
+} : function(obj) {
 ...</pre></li>
     </ul>
 
@@ -1565,7 +1687,7 @@ helpers.processAggregate = function(results, options) {
   };
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- */
+Check.prototype.enabled = true;
 Check.prototype.run = function(node, options, resolve, reject) {
   'use strict';
   options = options || {};
@@ -1604,7 +1726,6 @@ this.options;
       }
     } else {
       out = {};
-      // jshint forin: false
       for (index in obj) {
         out[index] = axe.utils.clone(obj[index]);
       }
@@ -1613,22 +1734,22 @@ this.options;
   return out;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+} : function(obj) {
   return obj &amp;&amp; typeof Symbol === 'function' &amp;&amp; obj.constructor === Symbol &amp;&amp; obj !== Symbol
 .prototype ? 'symbol' : typeof obj;
 };
-/*global Rule, Check, RuleResult, commons: true */
 function getDefaultConfiguration(audit) {
   'use strict';
   var config;
   if (audit) {
     config = axe.utils.<span class="apidocCodeKeywordSpan">clone</span>(audit);
-    // Commons are configured into axe like everything else,
-    // however because things go funky if we have multiple commons objects
-    // we're not using the copy of that.
     config.commons = audit.commons;
   } else {
     config = {};
   }
+  config.reporter = config.reporter || null;
+  config.rules = config.rules || [];
+  config.checks = config.checks || [];
 ...</pre></li>
     </ul>
 
@@ -1645,7 +1766,6 @@ function getDefaultConfiguration(audit) {
   'use strict';
   var q = axe.utils.queue();
   var frames = context.frames;
-  // Tell each axe running in each frame to collect results
   frames.forEach(function(frame) {
     var params = {
       options: options,
@@ -1672,18 +1792,17 @@ function getDefaultConfiguration(audit) {
       }, rej);
     });
   });
-  // Combine results from all frames and give it back
   q.then(function(data) {
     resolve(axe.utils.mergeResults(data));
   }).catch(reject);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  function runRules(context, options, resolve, reject) {
-'use strict';
-context = new Context(context);
 var q = axe.utils.queue();
 var audit = axe._audit;
-if (context.frames.length) {
+if (options.performanceTimer) {
+  axe.utils.performanceTimer.auditStart();
+}
+if (context.frames.length &amp;&amp; options.iframes !== false) {
   q.defer(function(res, rej) {
     axe.utils.<span class="apidocCodeKeywordSpan">collectResultsFromFrames</span>(context, options, 'rules', null, res
 , rej);
@@ -1707,7 +1826,6 @@ q.then(function(data) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">contains = function (node, otherNode) {
-  //jshint bitwise: false
   'use strict';
   if (typeof node.contains === 'function') {
     return node.contains(otherNode);
@@ -1715,21 +1833,21 @@ q.then(function(data) {
   return !!(node.compareDocumentPosition(otherNode) &amp; 16);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* @param  {HTMLElement} otherNode The node to test is contained by `node`
-* @return {Boolean}           Whether `node` contains `otherNode`
-*/
- axe.utils.contains = function(node, otherNode) {
-   //jshint bitwise: false
-   'use strict';
-   if (typeof node.contains === 'function') {
-     return node.<span class="apidocCodeKeywordSpan">contains</span>(otherNode);
-   }
-   return !!(node.compareDocumentPosition(otherNode) &amp; 16);
- };
- 'use strict';
- /*exported DqElement */
- function truncate(str, maxLength) {
-   'use strict';
+  }).catch(reject);
+}
+axe.utils.collectResultsFromFrames = collectResultsFromFrames;
+'use strict';
+axe.utils.contains = function(node, otherNode) {
+  'use strict';
+  if (typeof node.contains === 'function') {
+    return node.<span class="apidocCodeKeywordSpan">contains</span>(otherNode);
+  }
+  return !!(node.compareDocumentPosition(otherNode) &amp; 16);
+};
+'use strict';
+function truncate(str, maxLength) {
+  'use strict';
+  maxLength = maxLength || 300;
 ...</pre></li>
     </ul>
 
@@ -1744,8 +1862,7 @@ q.then(function(data) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">escapeSelector = function (value) {
   'use strict';
-<span class="apidocCodeCommentSpan">  /*jshint bitwise: true, eqeqeq: false, maxcomplexity: 14, maxstatements: 23, onevar: false, -W041: false */
-</span>  var string = String(value);
+  var string = String(value);
   var length = string.length;
   var index = -1;
   var codeUnit;
@@ -1753,64 +1870,43 @@ q.then(function(data) {
   var firstCodeUnit = string.charCodeAt(0);
   while (++index &lt; length) {
     codeUnit = string.charCodeAt(index);
-    // Note: thereâ€™s no need to special-case astral symbols, surrogate
-    // pairs, or lone surrogates.
-    // If the character is NULL (U+0000), then throw an
-    // `InvalidCharacterError` exception and terminate these steps.
     if (codeUnit == 0) {
       throw new Error('INVALID_CHARACTER_ERR');
     }
-    if (// If the character is in the range [\1-\1F] (U+0001 to U+001F) or
-    // [\7F-\9F] (U+007F to U+009F), [â€¦]
-    codeUnit &gt;= 1 &amp;&amp; codeUnit &lt;= 31 || codeUnit &gt;= 127 &amp;&amp; codeUnit &lt;= 159 || // If the character is the first character and is in
- the range [0-9]
-    // (U+0030 to U+0039), [â€¦]
-    index == 0 &amp;&amp; codeUnit &gt;= 48 &amp;&amp; codeUnit &lt;= 57 || // If the character is the second character and is in the range [0-9]
-    // (U+0030 to U+0039) and the first character is a `-` (U+002D), [â€¦]
-    index == 1 &amp;&amp; codeUnit &gt;= 48 &amp;&amp; codeUnit &lt;= 57 &amp;&amp; firstCodeUnit == 45) {
-      // http://dev.w3.org/csswg/cssom/#escape-a-character-as-code-point
+    if (codeUnit &gt;= 1 &amp;&amp; codeUnit &lt;= 31 || codeUnit &gt;= 127 &amp;&amp; codeUnit &lt;= 159 || index == 0 &amp;&amp; codeUnit &gt;= 48 &amp;&amp; codeUnit &lt;= 57 ||
+index == 1 &amp;&amp; codeUnit &gt;= 48 &amp;&amp; codeUnit &lt;= 57 &amp;&amp; firstCodeUnit == 45) {
       result += '\\' + codeUnit.toString(16) + ' ';
       continue;
     }
-    // If the character is the second character and is `-` (U+002D) and the
-    // first character is `-` as well, [â€¦]
     if (index == 1 &amp;&amp; codeUnit == 45 &amp;&amp; firstCodeUnit == 45) {
-      // http://dev.w3.org/csswg/cssom/#escape-a-character
       result += '\\' + string.charAt(index);
       continue;
     }
-    // If the character is not handled by one of the above rules and is
-    // greater than or equal to U+0080, is `-` (U+002D) or `_` (U+005F), or
-    // is in one of the ranges [0-9] (U+0030 to U+0039), [A-Z] (U+0041 to
-    // U+005A), or [a-z] (U+0061 to U+007A), [â€¦]
     if (codeUnit &gt;= 128 || codeUnit == 45 || codeUnit == 95 || codeUnit &gt;= 48 &amp;&amp; codeUnit &lt;= 57 || codeUnit &gt;= 65 &amp;&amp; codeUnit &lt;=
 90 || codeUnit &gt;= 97 &amp;&amp; codeUnit &lt;= 122) {
-      // the character itself
       result += string.charAt(index);
       continue;
     }
-    // Otherwise, the escaped character.
-    // http://dev.w3.org/csswg/cssom/#escape-a-character
     result += '\\' + string.charAt(index);
   }
   return result;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* @param  {HTMLElement} node The element to get the selector for
-* @return {String}      Unique CSS selector for the node
-*/
- axe.utils.getSelector = function getSelector(node) {
-   //jshint maxstatements: 21
-   'use strict';
-   function escape(p) {
-     return axe.utils.<span class="apidocCodeKeywordSpan">escapeSelector</span>(p);
-   }
-   var parts = [], part;
-   while (node.parentNode) {
-     part = '';
-     if (node.id &amp;&amp; document.querySelectorAll('#' + axe.utils.escapeSelector(node.id)).length === 1) {
-       parts.unshift('#' + axe.utils.escapeSelector(node.id));
-       break;
+    }
+  }
+  return false;
+}
+axe.utils.getSelector = function getSelector(node) {
+  'use strict';
+  function escape(p) {
+    return axe.utils.<span class="apidocCodeKeywordSpan">escapeSelector</span>(p);
+  }
+  var parts = [], part;
+  while (node.parentNode) {
+    part = '';
+    if (node.id &amp;&amp; document.querySelectorAll('#' + axe.utils.escapeSelector(node.id)).length === 1) {
+      parts.unshift('#' + axe.utils.escapeSelector(node.id));
+      break;
 ...</pre></li>
     </ul>
 
@@ -1835,21 +1931,21 @@ q.then(function(data) {
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-   'use strict';
-   return function(check) {
-     var sourceData = checksData[check.id] || {};
-     var messages = sourceData.messages || {};
-     var data = Object.assign({}, sourceData);
-     delete data.messages;
-     data.message = check.result === shouldBeTrue ? messages.pass : messages.fail;
-     axe.utils.<span class="apidocCodeKeywordSpan">extendMetaData</span>(check, data);
-   };
- }
- /**
-* Publish metadata from axe._audit.data
-* @param  {RuleResult} result Result to publish to
-* @private
-*/
+        });
+      } else {
+        data.message = messages.incomplete;
+      }
+    } else {
+      data.message = check.result === shouldBeTrue ? messages.pass : messages.fail;
+    }
+    axe.utils.<span class="apidocCodeKeywordSpan">extendMetaData</span>(check, data);
+  };
+}
+axe.utils.publishMetaData = function(ruleResult) {
+  'use strict';
+  var checksData = axe._audit.data.checks || {};
+  var rulesData = axe._audit.data.rules || {};
+  var rule = axe.utils.findBy(axe._audit.rules, 'id', ruleResult.id) || {};
 ...</pre></li>
     </ul>
 
@@ -1868,21 +1964,21 @@ q.then(function(data) {
   return ruleResult;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-// For each node, retrieve the result and impact
-subResults = subResults.map(function(subResult) {
-  // Known result
-  if (subResult.any &amp;&amp; subResult.all &amp;&amp; subResult.none) {
-    return axe.utils.aggregateChecks(subResult);
-  } else {
-    if (Array.isArray(subResult.node)) {
+  (function() {
+axe.utils.aggregateRule = function(subResults) {
+  var ruleResult = {};
+  subResults = subResults.map(function(subResult) {
+    if (subResult.any &amp;&amp; subResult.all &amp;&amp; subResult.none) {
+      return axe.utils.aggregateChecks(subResult);
+    } else if (Array.isArray(subResult.node)) {
       return axe.utils.<span class="apidocCodeKeywordSpan">finalizeRuleResult</span>(subResult);
     } else {
       throw new TypeError('Invalid Result type');
     }
-  }
-});
-// Aggregate the result
-var resultList = subResults.map(function(node) {
+  });
+  var resultList = subResults.map(function(node) {
+    return node.result;
+  });
 ...</pre></li>
     </ul>
 
@@ -1903,21 +1999,21 @@ var resultList = subResults.map(function(node) {
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* @param  {Array} results  Array of RuleResults to postprocess
-* @param  {Mixed} options  Options object to pass into rules and/or disable rules or checks
-*/
- Audit.prototype.after = function(results, options) {
-   'use strict';
-   var rules = this.rules;
-   return results.map(function(ruleResult) {
-     var rule = axe.utils.<span class="apidocCodeKeywordSpan">findBy</span>(rules, 'id', ruleResult.id);
-     return rule.after(ruleResult, options);
-   });
- };
- /**
-* Get the rule with a given ID
-* @param  {string}
-* @return {Rule}
+    }));
+  }).catch(reject);
+};
+Audit.prototype.after = function(results, options) {
+  'use strict';
+  var rules = this.rules;
+  return results.map(function(ruleResult) {
+    var rule = axe.utils.<span class="apidocCodeKeywordSpan">findBy</span>(rules, 'id', ruleResult.id);
+    return rule.after(ruleResult, options);
+  });
+};
+Audit.prototype.getRule = function(ruleId) {
+  return this.rules.find(function(rule) {
+    return rule.id === ruleId;
+  });
 ...</pre></li>
     </ul>
 
@@ -1936,21 +2032,21 @@ var resultList = subResults.map(function(node) {
   return result.concat(object.any || []).concat(object.all || []).concat(object.none || []);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* Iterates the rule's Checks looking for ones that have an after function
-* @private
-* @param  {Rule} rule The rule to check for after checks
-* @return {Array}      Checks that have an after function
-*/
- function findAfterChecks(rule) {
-   'use strict';
-   return axe.utils.<span class="apidocCodeKeywordSpan">getAllChecks</span>(rule).map(function(c) {
-     var check = rule._audit.checks[c.id || c];
-     return check &amp;&amp; typeof check.after === 'function' ? check : null;
-   }).filter(Boolean);
- }
- /**
-* Finds and collates all results for a given Check on a specific Rule
-* @private
+    return resolve(ruleResult);
+  }).catch(function(error) {
+    return reject(error);
+  });
+};
+function findAfterChecks(rule) {
+  'use strict';
+  return axe.utils.<span class="apidocCodeKeywordSpan">getAllChecks</span>(rule).map(function(c) {
+    var check = rule._audit.checks[c.id || c];
+    return check &amp;&amp; typeof check.after === 'function' ? check : null;
+  }).filter(Boolean);
+}
+function findCheckResults(nodes, checkID) {
+  'use strict';
+  var checkResults = [];
 ...</pre></li>
     </ul>
 
@@ -2019,7 +2115,6 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getSelector(node) {
-  //jshint maxstatements: 21
   'use strict';
   function escape(p) {
     return axe.utils.escapeSelector(p);
@@ -2053,21 +2148,21 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
   return parts.join(' &gt; ');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-     }
-   }
-   return out;
- };
- 'use strict';
- function err(message, node) {
-   'use strict';
-   return new Error(message + ': ' + axe.utils.<span class="apidocCodeKeywordSpan">getSelector</span>(node));
- }
- /**
-* Sends a command to an instance of axe in the specified frame
-* @param  {Element}  node       The frame element to send the message to
-* @param  {Object}   parameters Parameters to pass to the frame
-* @param  {Function} callback   Function to call when results from the frame has returned
-*/
+    }
+  }
+  return out;
+};
+'use strict';
+function err(message, node) {
+  'use strict';
+  return new Error(message + ': ' + axe.utils.<span class="apidocCodeKeywordSpan">getSelector</span>(node));
+}
+axe.utils.sendCommandToFrame = function(node, parameters, resolve, reject) {
+  'use strict';
+  var win = node.contentWindow;
+  if (!win) {
+    axe.log('Frame does not have a content window', node);
+    resolve(null);
 ...</pre></li>
     </ul>
 
@@ -2085,21 +2180,21 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
   return xpathToString(xpathArray);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* A unique CSS selector for the element
-* @type {String}
-*/
-  this.selector = spec.selector || [ axe.utils.getSelector(element) ];
-  /**
-* Xpath to the element
-*/
-  this.xpath = spec.xpath || [ axe.utils.<span class="apidocCodeKeywordSpan">getXpath</span>(element) ];
-  /**
-* The generated HTML source code of the element
-* @type {String}
-*/
-  this.source = spec.source !== undefined ? spec.source : getSource(element);
-  /**
-* The element which this object is based off or the containing frame, used for sorting.
+  this._element = element;
+}
+DqElement.prototype = {
+  get selector() {
+    return this.spec.selector || [ axe.utils.getSelector(this.element) ];
+  },
+  get xpath() {
+    return this.spec.xpath || [ axe.utils.<span class="apidocCodeKeywordSpan">getXpath</span>(this.element) ];
+  },
+  get element() {
+    return this._element;
+  },
+  get fromFrame() {
+    return this._fromFrame;
+  },
 ...</pre></li>
     </ul>
 
@@ -2115,9 +2210,7 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
     <li>description and source-code<pre class="apidocCodePre">function injectStyle(style) {
   'use strict';
   if (styleSheet &amp;&amp; styleSheet.parentNode) {
-    // append the style to the existing sheet
     if (styleSheet.styleSheet === undefined) {
-      // Not old IE
       styleSheet.appendChild(document.createTextNode(style));
     } else {
       styleSheet.styleSheet.cssText += style;
@@ -2131,7 +2224,6 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
   styleSheet = document.createElement('style');
   styleSheet.type = 'text/css';
   if (styleSheet.styleSheet === undefined) {
-    // Not old IE
     styleSheet.appendChild(document.createTextNode(style));
   } else {
     styleSheet.styleSheet.cssText = style;
@@ -2153,34 +2245,33 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isHidden(el, recursed) {
   'use strict';
-  // 9 === Node.DOCUMENT
   if (el.nodeType === 9) {
     return false;
   }
   var style = window.getComputedStyle(el, null);
-  if (!style || !el.parentNode || style.getPropertyValue('display') === 'none' || !recursed &amp;&amp; // visibility is only accurate on
- the first element
-  style.getPropertyValue('visibility') === 'hidden' || el.getAttribute('aria-hidden') === 'true') {
+  if (!style || !el.parentNode || style.getPropertyValue('display') === 'none' || !recursed &amp;&amp; style.getPropertyValue('visibility
+') === 'hidden' || el.getAttribute('aria-hidden') === 'true') {
     return true;
   }
   return axe.utils.isHidden(el.parentNode, true);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* Pushes a unique frame onto `frames` array, filtering any hidden iframes
-* @private
-* @param  {Array} collection The array of unique frames that is being operated on
-* @param  {HTMLElement} frame   The frame to push onto Context
-*/
- function pushUniqueFrame(collection, frame) {
-   'use strict';
-   if (axe.utils.<span class="apidocCodeKeywordSpan">isHidden</span>(frame)) {
-     return;
-   }
-   var fr = axe.utils.findBy(collection, 'node', frame);
-   if (!fr) {
-     collection.push({
-       node: frame,
-       include: [],
+var _typeof = typeof Symbol === 'function' &amp;&amp; typeof Symbol.iterator === 'symbol' ? function(obj) {
+  return typeof obj;
+} : function(obj) {
+  return obj &amp;&amp; typeof Symbol === 'function' &amp;&amp; obj.constructor === Symbol &amp;&amp; obj !== Symbol
+.prototype ? 'symbol' : typeof obj;
+};
+function pushUniqueFrame(collection, frame) {
+  'use strict';
+  if (axe.utils.<span class="apidocCodeKeywordSpan">isHidden</span>(frame)) {
+    return;
+  }
+  var fr = axe.utils.findBy(collection, 'node', frame);
+  if (!fr) {
+    collection.push({
+      node: frame,
+      include: [],
 ...</pre></li>
     </ul>
 
@@ -2200,21 +2291,21 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
   return node[method](selector);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-   var index, sibling, siblings = node.parentNode.children;
-   if (!siblings) {
-     return false;
-   }
-   var length = siblings.length;
-   for (index = 0; index &lt; length; index++) {
-     sibling = siblings[index];
-     if (sibling !== node &amp;&amp; axe.utils.<span class="apidocCodeKeywordSpan">matchesSelector</span>(sibling, selector)) {
-       return true;
-     }
-   }
-   return false;
- }
- /**
-* Gets a unique CSS selector
+  var index, sibling, siblings = node.parentNode.children;
+  if (!siblings) {
+    return false;
+  }
+  var length = siblings.length;
+  for (index = 0; index &lt; length; index++) {
+    sibling = siblings[index];
+    if (sibling !== node &amp;&amp; axe.utils.<span class="apidocCodeKeywordSpan">matchesSelector</span>(sibling, selector)) {
+      return true;
+    }
+  }
+  return false;
+}
+axe.utils.getSelector = function getSelector(node) {
+  'use strict';
 ...</pre></li>
     </ul>
 
@@ -2252,21 +2343,21 @@ Rule.prototype.runChecks = function(type, node, options, resolve, reject) {
   return result;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-}
-q.defer(function(res, rej) {
   audit.run(context, options, res, rej);
 });
 q.then(function(data) {
   try {
-    // Add wrapper object so that we may use the same "merge" function for results from inside and outside frames
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.auditEnd();
+    }
     var results = axe.utils.<span class="apidocCodeKeywordSpan">mergeResults</span>(data.map(function(d) {
       return {
         results: d
       };
     }));
-    // after should only run once, so ensure we are in the top level window
     if (context.initiator) {
       results = audit.after(results, options);
+      results.forEach(axe.utils.publishMetaData);
 ...</pre></li>
     </ul>
 
@@ -2280,20 +2371,18 @@ q.then(function(data) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function nodeSorter(a, b) {
-<span class="apidocCodeCommentSpan">  /*jshint bitwise: false */
-</span>  'use strict';
+  'use strict';
   if (a === b) {
     return 0;
   }
   if (a.compareDocumentPosition(b) &amp; 4) {
-    // a before b
     return -1;
   }
   return 1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* @return {Array}      The merged and sorted result
-*/
+  });
+}
 function spliceNodes(target, to) {
   'use strict';
   var firstFromFrame = to[0].node, sorterResult, t;
@@ -2339,30 +2428,25 @@ function spliceNodes(target, to) {
     var current, i, d;
     var elements = [];
     var previousPointerEvents = [];
-    // startup
     document.head.appendChild(style);
     while ((current = document.elementFromPoint(x, y)) &amp;&amp; elements.indexOf(current) === -1) {
-      // push the element and its current style
       elements.push(current);
       previousPointerEvents.push({
         value: current.style.getPropertyValue(cssProp),
         priority: current.style.getPropertyPriority(cssProp)
       });
-      // add "pointer-events: none", to get to the underlying element
       current.style.setProperty(cssProp, cssDisableVal, 'important');
     }
-    // restore the previous pointer-events values
     for (i = previousPointerEvents.length; !!(d = previousPointerEvents[--i]); ) {
       elements[i].style.setProperty(cssProp, d.value ? d.value : '', d.priority);
     }
-    // teardown;
     document.head.removeChild(style);
     return elements;
   };
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+      elements[i].style.setProperty(cssProp, d.value ? d.value : '', d.priority);
     }
-    // teardown;
     document.head.removeChild(style);
     return elements;
   };
@@ -2419,12 +2503,9 @@ if (!Array.prototype.includes) {
   var tasks = [];
   var started = 0;
   var remaining = 0;
-  // number of tasks not yet finished
   var completeQueue = noop;
   var complete = false;
   var err;
-  // By default, wait until the next tick,
-  // if no catch was set, throw to console.
   var defaultFail = function defaultFail(e) {
     err = e;
     setTimeout(function() {
@@ -2445,11 +2526,8 @@ if (!Array.prototype.includes) {
     };
   }
   function abort(msg) {
-    // reset tasks
     completeQueue = noop;
-    // notify catch
     failed(msg);
-    // return unfinished work
     return tasks;
   }
   function pop() {
@@ -2464,13 +2542,7 @@ if (!Array.prototype.includes) {
     }
   }
   var q = {
-<span class="apidocCodeCommentSpan">    /**
-* Defer a function that may or may not run asynchronously.
-*
-* First parameter should be the function to execute with subsequent
-* parameters being passed as arguments to that function
-*/
-</span>    defer: function defer(fn) {
+    defer: function defer(fn) {
       if ((typeof fn === 'undefined' ? 'undefined' : _typeof(fn)) === 'object' &amp;&amp; fn.then &amp;&amp; fn.catch) {
         var defer = fn;
         fn = function fn(resolve, reject) {
@@ -2480,21 +2552,14 @@ if (!Array.prototype.includes) {
       funcGuard(fn);
       if (err !== undefined) {
         return;
-      } else {
-        if (complete) {
-          throw new Error('Queue already completed');
-        }
+      } else if (complete) {
+        throw new Error('Queue already completed');
       }
       tasks.push(fn);
       ++remaining;
       pop();
       return q;
     },
-    /**
-* The callback to execute once all "deferred" functions have completed.  Will only be invoked once.
-* @param  {Function} f The callback, receives an array of the return/callbacked
-* values of each of the "deferred" functions
-*/
     then: function then(fn) {
       funcGuard(fn);
       if (completeQueue !== noop) {
@@ -2509,7 +2574,7 @@ if (!Array.prototype.includes) {
       }
       return q;
     },
-    'catch': function _catch(fn) {
+    catch: function _catch(fn) {
       funcGuard(fn);
       if (failed !== defaultFail) {
         throw new Error('queue `catch` already set');
@@ -2522,30 +2587,26 @@ if (!Array.prototype.includes) {
       }
       return q;
     },
-    /**
-* Abort the "queue" and prevent `then` function from firing
-* @param  {Function} fn The callback to execute; receives an array of the results which have completed
-*/
     abort: abort
   };
   return q;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* @param  {Context}   context The scope definition/context for analysis (include/exclude)
-* @param  {Object}    options Options object to pass into rules and/or disable rules or checks
-* @param  {Function} fn       Callback function to fire when audit is complete
-*/
- Audit.prototype.run = function(context, options, resolve, reject) {
-   'use strict';
-   this.validateOptions(options);
-   var q = axe.utils.<span class="apidocCodeKeywordSpan">queue</span>();
-   this.rules.forEach(function(rule) {
-     if (axe.utils.ruleShouldRun(rule, context, options)) {
-       q.defer(function(res, rej) {
-         rule.run(context, options, res, function(err) {
-           if (!options.debug) {
-             var errResult = Object.assign(new RuleResult(rule), {
-               result: axe.constants.CANTTELL,
+  } else {
+    this.checks[spec.id] = new Check(spec);
+  }
+};
+Audit.prototype.run = function(context, options, resolve, reject) {
+  'use strict';
+  this.validateOptions(options);
+  var q = axe.utils.<span class="apidocCodeKeywordSpan">queue</span>();
+  this.rules.forEach(function(rule) {
+    if (axe.utils.ruleShouldRun(rule, context, options)) {
+      if (options.performanceTimer) {
+        var markEnd = 'mark_rule_end_' + rule.id;
+        var markStart = 'mark_rule_start_' + rule.id;
+        axe.utils.performanceTimer.mark(markStart);
+      }
 ...</pre></li>
     </ul>
 
@@ -2563,21 +2624,21 @@ if (!Array.prototype.includes) {
   post(win, topic, message, id, keepalive, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+      axe.log(errMsg);
       resolve(null);
     } else {
       reject(errMsg);
     }
   }, 0);
 }, 500);
-// send 'axe.ping' to the frame
 axe.utils.<span class="apidocCodeKeywordSpan">respondable</span>(win, 'axe.ping', null, undefined, function() {
   clearTimeout(timeout);
-  // Give aXe 30s to respond to 'axe.start'
   timeout = setTimeout(function() {
     reject(err('Axe in frame timed out', node));
   }, 3e4);
-  // send 'axe.start' and send the callback if it responded
   axe.utils.respondable(win, 'axe.start', parameters, undefined, function(data) {
+    clearTimeout(timeout);
+    if (data instanceof Error === false) {
 ...</pre></li>
     </ul>
 
@@ -2594,41 +2655,34 @@ axe.utils.<span class="apidocCodeKeywordSpan">respondable</span>(win, 'axe.ping'
   'use strict';
   var runOnly = options.runOnly || {};
   var ruleOptions = (options.rules || {})[rule.id];
-  // Never run page level rules if the context is not on the page
   if (rule.pageLevel &amp;&amp; !context.page) {
     return false;
+  } else if (runOnly.type === 'rule') {
+    return runOnly.values.indexOf(rule.id) !== -1;
+  } else if (ruleOptions &amp;&amp; typeof ruleOptions.enabled === 'boolean') {
+    return ruleOptions.enabled;
+  } else if (runOnly.type === 'tag' &amp;&amp; runOnly.values) {
+    return matchTags(rule, runOnly.values);
   } else {
-    if (runOnly.type === 'rule') {
-      return runOnly.values.indexOf(rule.id) !== -1;
-    } else {
-      if (ruleOptions &amp;&amp; typeof ruleOptions.enabled === 'boolean') {
-        return ruleOptions.enabled;
-      } else {
-        if (runOnly.type === 'tag' &amp;&amp; runOnly.values) {
-          return matchTags(rule, runOnly.values);
-        } else {
-          return matchTags(rule, []);
-        }
-      }
-    }
+    return matchTags(rule, []);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* @param  {Function} fn       Callback function to fire when audit is complete
-*/
- Audit.prototype.run = function(context, options, resolve, reject) {
-   'use strict';
-   this.validateOptions(options);
-   var q = axe.utils.queue();
-   this.rules.forEach(function(rule) {
-     if (axe.utils.<span class="apidocCodeKeywordSpan">ruleShouldRun</span>(rule, context, options)) {
-       q.defer(function(res, rej) {
-         rule.run(context, options, res, function(err) {
-           if (!options.debug) {
-             var errResult = Object.assign(new RuleResult(rule), {
-               result: axe.constants.CANTTELL,
-               description: 'An error occured while running this rule',
-               message: err.message,
+  }
+};
+Audit.prototype.run = function(context, options, resolve, reject) {
+  'use strict';
+  this.validateOptions(options);
+  var q = axe.utils.queue();
+  this.rules.forEach(function(rule) {
+    if (axe.utils.<span class="apidocCodeKeywordSpan">ruleShouldRun</span>(rule, context, options)) {
+      if (options.performanceTimer) {
+        var markEnd = 'mark_rule_end_' + rule.id;
+        var markStart = 'mark_rule_start_' + rule.id;
+        axe.utils.performanceTimer.mark(markStart);
+      }
+      q.defer(function(res, rej) {
+        rule.run(context, options, function(out) {
 ...</pre></li>
     </ul>
 
@@ -2689,10 +2743,7 @@ if (this.include.length === 1 &amp;&amp; this.include[0] === document) {
     resolve(null);
     return;
   }
-  // give the frame .5s to respond to 'axe.ping', else log failed response
   var timeout = setTimeout(function() {
-    // This double timeout is important for allowing iframes to respond
-    // DO NOT REMOVE
     timeout = setTimeout(function() {
       var errMsg = err('No response from frame', node);
       if (!parameters.debug) {
@@ -2703,14 +2754,11 @@ if (this.include.length === 1 &amp;&amp; this.include[0] === document) {
       }
     }, 0);
   }, 500);
-  // send 'axe.ping' to the frame
   axe.utils.respondable(win, 'axe.ping', null, undefined, function() {
     clearTimeout(timeout);
-    // Give aXe 30s to respond to 'axe.start'
     timeout = setTimeout(function() {
       reject(err('Axe in frame timed out', node));
     }, 3e4);
-    // send 'axe.start' and send the callback if it responded
     axe.utils.respondable(win, 'axe.start', parameters, undefined, function(data) {
       clearTimeout(timeout);
       if (data instanceof Error === false) {
@@ -2754,21 +2802,21 @@ q.then(function(results) {
   return Array.prototype.slice.call(thing);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  function parseSelectorArray(context, type) {
-'use strict';
-var item, result = [];
-for (var i = 0, l = context[type].length; i &lt; l; i++) {
-  item = context[type][i];
-  // selector
-  if (typeof item === 'string') {
-    result = result.concat(axe.utils.<span class="apidocCodeKeywordSpan">toArray</span>(document.querySelectorAll(item)));
-    break;
-  } else {
-    if (item &amp;&amp; item.length &amp;&amp; !(item instanceof Node)) {
+}
+function parseSelectorArray(context, type) {
+  'use strict';
+  var item, result = [];
+  for (var i = 0, l = context[type].length; i &lt; l; i++) {
+    item = context[type][i];
+    if (typeof item === 'string') {
+      result = result.concat(axe.utils.<span class="apidocCodeKeywordSpan">toArray</span>(document.querySelectorAll(item)));
+      break;
+    } else if (item &amp;&amp; item.length &amp;&amp; !(item instanceof Node)) {
       if (item.length &gt; 1) {
         pushUniqueFrameSelector(context, type, item);
       } else {
         result = result.concat(axe.utils.toArray(document.querySelectorAll(item[0])));
+      }
 ...</pre></li>
     </ul>
 
@@ -2785,24 +2833,10 @@ for (var i = 0, l = context[type].length; i &lt; l; i++) {
   'use strict';
   return str.trim().replace(/\s{2,}/g, ' ').split(' ');
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-        }
-        switch (attrInfo.type) {
-case 'boolean':
-case 'nmtoken':
- return typeof value === 'string' &amp;&amp; attrInfo.values.indexOf(value.toLowerCase()) !== -1;
-
-case 'nmtokens':
- list = axe.utils.<span class="apidocCodeKeywordSpan">tokenList</span>(value);
- // Check if any value isn't in the list of values
- return list.reduce(function(result, token) {
-   return result &amp;&amp; attrInfo.values.indexOf(token) !== -1;
- }, list.length !== 0);
-
-case 'idref':
- return !!(value &amp;&amp; doc.getElementById(value));
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
 
 
 </div>
@@ -2820,44 +2854,27 @@ case 'idref':
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function DqElement(element, spec) {
   'use strict';
-  spec = spec || {};
-<span class="apidocCodeCommentSpan">  /**
-* A unique CSS selector for the element
-* @type {String}
-*/
-</span>  this.selector = spec.selector || [ axe.utils.getSelector(element) ];
-  /**
-* Xpath to the element
-*/
-  this.xpath = spec.xpath || [ axe.utils.getXpath(element) ];
-  /**
-* The generated HTML source code of the element
-* @type {String}
-*/
-  this.source = spec.source !== undefined ? spec.source : getSource(element);
-  /**
-* The element which this object is based off or the containing frame, used for sorting.
-* Excluded in toJSON method.
-* @type {HTMLElement}
-*/
-  this.element = element;
+  this._fromFrame = !!spec;
+  this.spec = spec || {};
+  this.source = this.spec.source !== undefined ? this.spec.source : getSource(element);
+  this._element = element;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-          });
-          result[r.type] = res;
-          if (res.length) {
-            hasResults = true;
-          }
-        });
-        if (hasResults) {
-          result.node = new axe.utils.<span class="apidocCodeKeywordSpan">DqElement</span>(node);
-          ruleResult.nodes.push(result);
-        }
+      });
+      result[r.type] = res;
+      if (res.length) {
+        hasResults = true;
       }
-      resolveNode();
-    }).catch(rejectNode);
-  });
-}
+    });
+    if (hasResults) {
+      result.node = new axe.utils.<span class="apidocCodeKeywordSpan">DqElement</span>(node);
+      ruleResult.nodes.push(result);
+    }
+  }
+  resolveNode();
+}).catch(function(err) {
+  return rejectNode(err);
+});
 ...</pre></li>
     </ul>
 
@@ -2908,7 +2925,7 @@ resultSet.forEach(function(res) {
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    <li>description and source-code<pre class="apidocCodePre">function toJSON() {
   'use strict';
   return {
     selector: this.selector,
@@ -2917,6 +2934,316 @@ resultSet.forEach(function(res) {
   };
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.axe-core.utils.performanceTimer" id="apidoc.module.axe-core.utils.performanceTimer">module axe-core.utils.performanceTimer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.auditEnd" id="apidoc.element.axe-core.utils.performanceTimer.auditEnd">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>auditEnd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function auditEnd() {
+  this.mark('mark_audit_end');
+  this.measure('audit_start_to_end', 'mark_audit_start', 'mark_audit_end');
+  this.logMeasures();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+q.defer(function(res, rej) {
+  audit.run(context, options, res, rej);
+});
+q.then(function(data) {
+  try {
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.<span class="apidocCodeKeywordSpan">auditEnd</span>();
+    }
+    var results = axe.utils.mergeResults(data.map(function(d) {
+      return {
+        results: d
+      };
+    }));
+    if (context.initiator) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.auditStart" id="apidoc.element.axe-core.utils.performanceTimer.auditStart">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>auditStart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function auditStart() {
+  this.mark('mark_audit_start');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  context = new Context(context);
+} catch (e) {
+  return reject(e);
+}
+var q = axe.utils.queue();
+var audit = axe._audit;
+if (options.performanceTimer) {
+  axe.utils.performanceTimer.<span class="apidocCodeKeywordSpan">auditStart</span>();
+}
+if (context.frames.length &amp;&amp; options.iframes !== false) {
+  q.defer(function(res, rej) {
+    axe.utils.collectResultsFromFrames(context, options, 'rules', null, res, rej);
+  });
+}
+q.defer(function(res, rej) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.end" id="apidoc.element.axe-core.utils.performanceTimer.end">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end() {
+  this.mark('mark_axe_end');
+  this.measure('axe', 'mark_axe_start', 'mark_axe_end');
+  this.logMeasures('axe');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    axe.utils.performanceTimer.start();
+  }
+  var reporter = axe.getReporter(options.reporter);
+  axe._runRules(context, options, function(results) {
+    var res = reporter(results, options, callback);
+    if (res !== undefined) {
+      if (options.performanceTimer) {
+        axe.utils.performanceTimer.<span class="apidocCodeKeywordSpan">end</span>();
+      }
+      callback(res);
+    }
+  }, axe.log);
+};
+'use strict';
+function cleanupPlugins(resolve, reject) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.logMeasures" id="apidoc.element.axe-core.utils.performanceTimer.logMeasures">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>logMeasures
+        <span class="apidocSignatureSpan">(measureName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function logMeasures(measureName) {
+  function log(req) {
+    axe.log('Measure ' + req.name + ' took ' + req.duration + 'ms');
+  }
+  if (window.performance &amp;&amp; window.performance.getEntriesByType !== undefined) {
+    var measures = window.performance.getEntriesByType('measure');
+    for (var i = 0; i &lt; measures.length; ++i) {
+      var req = measures[i];
+      if (req.name === measureName) {
+        log(req);
+        return;
+      }
+      log(req);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return {
+start: function start() {
+  this.mark('mark_axe_start');
+},
+end: function end() {
+  this.mark('mark_axe_end');
+  this.measure('axe', 'mark_axe_start', 'mark_axe_end');
+  this.<span class="apidocCodeKeywordSpan">logMeasures</span>('axe');
+},
+auditStart: function auditStart() {
+  this.mark('mark_audit_start');
+},
+auditEnd: function auditEnd() {
+  this.mark('mark_audit_end');
+  this.measure('audit_start_to_end', 'mark_audit_start', 'mark_audit_end');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.mark" id="apidoc.element.axe-core.utils.performanceTimer.mark">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>mark
+        <span class="apidocSignatureSpan">(markName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mark(markName) {
+  if (window.performance &amp;&amp; window.performance.mark !== undefined) {
+    window.performance.mark(markName);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.validateOptions(options);
+var q = axe.utils.queue();
+this.rules.forEach(function(rule) {
+  if (axe.utils.ruleShouldRun(rule, context, options)) {
+    if (options.performanceTimer) {
+      var markEnd = 'mark_rule_end_' + rule.id;
+      var markStart = 'mark_rule_start_' + rule.id;
+      axe.utils.performanceTimer.<span class="apidocCodeKeywordSpan">mark</span>(markStart);
+    }
+    q.defer(function(res, rej) {
+      rule.run(context, options, function(out) {
+        if (options.performanceTimer) {
+          axe.utils.performanceTimer.mark(markEnd);
+          axe.utils.performanceTimer.measure('rule_' + rule.id, markStart, markEnd);
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.measure" id="apidoc.element.axe-core.utils.performanceTimer.measure">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>measure
+        <span class="apidocSignatureSpan">(measureName, startMark, endMark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function measure(measureName, startMark, endMark) {
+  if (window.performance &amp;&amp; window.performance.measure !== undefined) {
+    window.performance.measure(measureName, startMark, endMark);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var markStart = 'mark_rule_start_' + rule.id;
+  axe.utils.performanceTimer.mark(markStart);
+}
+q.defer(function(res, rej) {
+  rule.run(context, options, function(out) {
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.mark(markEnd);
+      axe.utils.performanceTimer.<span class="apidocCodeKeywordSpan">measure</span>('rule_' + rule.id, markStart, markEnd
+);
+    }
+    res(out);
+  }, function(err) {
+    if (!options.debug) {
+      var errResult = Object.assign(new RuleResult(rule), {
+        result: axe.constants.CANTTELL,
+        description: 'An error occured while running this rule',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.reset" id="apidoc.element.axe-core.utils.performanceTimer.reset">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reset() {
+  if (!originalTime) {
+    originalTime = now();
+  }
+  lastRecordedTime = now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### Description
+
+Override any previous calls to `axe.configure` and restore the configuration to the default configuration. Note: this will NOT unregister
+ any new rules or checks that were registered but will reset the configuration back to the default configuration for everything
+else.
+
+#### Synopsis
+
+```javascript
+axe.<span class="apidocCodeKeywordSpan">reset</span>();
+```
+
+#### Parameters
+
+None
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.start" id="apidoc.element.axe-core.utils.performanceTimer.start">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function start() {
+  this.mark('mark_axe_start');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+var audit = axe._audit;
+if (!audit) {
+  throw new Error('No audit configured');
+}
+options.reporter = options.reporter || audit.reporter || 'v2';
+if (options.performanceTimer) {
+  axe.utils.performanceTimer.<span class="apidocCodeKeywordSpan">start</span>();
+}
+var reporter = axe.getReporter(options.reporter);
+axe._runRules(context, options, function(results) {
+  var res = reporter(results, options, callback);
+  if (res !== undefined) {
+    if (options.performanceTimer) {
+      axe.utils.performanceTimer.end();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axe-core.utils.performanceTimer.timeElapsed" id="apidoc.element.axe-core.utils.performanceTimer.timeElapsed">
+        function <span class="apidocSignatureSpan">axe-core.utils.performanceTimer.</span>timeElapsed
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function timeElapsed() {
+  return now() - lastRecordedTime;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  reject(new SupportError({
+    cause: error,
+    ruleId: this.id
+  }));
+  return;
+}
+if (options.performanceTimer) {
+  axe.log('gather (', nodes.length, '):', axe.utils.performanceTimer.<span class="apidocCodeKeywordSpan">timeElapsed
+</span>() + 'ms');
+}
+nodes.forEach(function(node) {
+  q.defer(function(resolveNode, rejectNode) {
+    var checkQueue = axe.utils.queue();
+    checkQueue.defer(function(res, rej) {
+      _this.runChecks('any', node, options, res, rej);
+    });
+...</pre></li>
     </ul>
 
 
@@ -2938,21 +3265,21 @@ resultSet.forEach(function(res) {
   post(win, topic, message, id, keepalive, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+      axe.log(errMsg);
       resolve(null);
     } else {
       reject(errMsg);
     }
   }, 0);
 }, 500);
-// send 'axe.ping' to the frame
 axe.utils.<span class="apidocCodeKeywordSpan">respondable</span>(win, 'axe.ping', null, undefined, function() {
   clearTimeout(timeout);
-  // Give aXe 30s to respond to 'axe.start'
   timeout = setTimeout(function() {
     reject(err('Axe in frame timed out', node));
   }, 3e4);
-  // send 'axe.start' and send the callback if it responded
   axe.utils.respondable(win, 'axe.start', parameters, undefined, function(data) {
+    clearTimeout(timeout);
+    if (data instanceof Error === false) {
 ...</pre></li>
     </ul>
 
@@ -2970,22 +3297,22 @@ axe.utils.<span class="apidocCodeKeywordSpan">respondable</span>(win, 'axe.ping'
   return !!win.frameElement;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* @param  {context} context
-* @return {Error}
-*/
- function validateContext(context) {
-   'use strict';
-   if (context.include.length === 0) {
-     if (context.frames.length === 0) {
-       var env = axe.utils.respondable.<span class="apidocCodeKeywordSpan">isInFrame</span>() ? 'frame' : 'page&amp;#
-x27;;
-       return new Error('No elements found for include in ' + env + ' Context');
-     }
-     context.frames.forEach(function(frame, i) {
-       if (frame.include.length === 0) {
-         return new Error('No elements found for include in Context of frame ' + i);
-       }
-     });
+    return r;
+  });
+}
+function validateContext(context) {
+  'use strict';
+  if (context.include.length === 0) {
+    if (context.frames.length === 0) {
+      var env = axe.utils.respondable.<span class="apidocCodeKeywordSpan">isInFrame</span>() ? 'frame' : 'page'
+;;
+      return new Error('No elements found for include in ' + env + ' Context');
+    }
+    context.frames.forEach(function(frame, i) {
+      if (frame.include.length === 0) {
+        return new Error('No elements found for include in Context of frame ' + i);
+      }
+    });
 ...</pre></li>
     </ul>
 
@@ -3002,22 +3329,22 @@ x27;;
   subscribers[topic] = callback;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- /**
-* Sets up Rules, Messages and default options for Checks, must be invoked before attempting analysis
-* @param  {Object} audit The "audit specification" object
-* @private
-*/
- axe._load = function(audit) {
-   'use strict';
-   axe.utils.respondable.<span class="apidocCodeKeywordSpan">subscribe</span>('axe.ping', function(data, keepalive, respond
+    if (axe._audit &amp;&amp; axe._audit.commands &amp;&amp; axe._audit.commands[data.command]) {
+      return axe._audit.commands[data.command](data, callback);
+    }
+  }
+}
+axe._load = function(audit) {
+  'use strict';
+  axe.utils.respondable.<span class="apidocCodeKeywordSpan">subscribe</span>('axe.ping', function(data, keepalive, respond
 ) {
-     respond({
-       axe: true
-     });
-   });
-   axe.utils.respondable.subscribe('axe.start', runCommand);
-   axe._audit = new Audit(audit);
- };
+    respond({
+      axe: true
+    });
+  });
+  axe.utils.respondable.subscribe('axe.start', runCommand);
+  axe._audit = new Audit(audit);
+};
 ...</pre></li>
     </ul>
 

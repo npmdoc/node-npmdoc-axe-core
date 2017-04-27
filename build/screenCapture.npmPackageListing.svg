@@ -1,12 +1,926 @@
-<svg height="142" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="142" fill="#555" width="720"></rect>
+<svg height="14766" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="14766" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-18 16:43:50 +0000   466687 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-18 16:43:50 +0000    15921 bytes  LICENSE</tspan>
-<tspan x="10" y="58">  2.  2017-04-18 16:43:50 +0000     3840 bytes  README.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-18 16:43:50 +0000     4272 bytes  axe.d.ts</tspan>
-<tspan x="10" y="90">  4.  2017-04-18 16:43:50 +0000   308283 bytes  axe.js</tspan>
-<tspan x="10" y="106">  5.  2017-04-18 16:43:50 +0000   130579 bytes  axe.min.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-18 16:43:50 +0000     3792 bytes  package.json</tspan>
+<tspan x="10" y="26">  0.  2017-04-27 18:59:46 +0000  1972023 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-27 18:59:46 +0000     2330 bytes  CHANGELOG</tspan>
+<tspan x="10" y="58">  2.  2017-04-27 18:59:46 +0000     4287 bytes  CONTRIBUTING.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-27 18:59:46 +0000     8478 bytes  Gruntfile.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-27 18:59:46 +0000    15921 bytes  LICENSE</tspan>
+<tspan x="10" y="106">  5.  2017-04-27 18:59:46 +0000     4685 bytes  README.md</tspan>
+<tspan x="10" y="122">  6.  2017-04-27 18:59:46 +0000     4396 bytes  axe.d.ts</tspan>
+<tspan x="10" y="138">  7.  2017-04-27 18:59:46 +0000   443090 bytes  axe.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-27 18:59:46 +0000   283162 bytes  axe.min.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-27 18:59:46 +0000      957 bytes  bower.json</tspan>
+<tspan x="10" y="186"> 10.  2017-04-27 18:59:46 +0000     1608 bytes  build/build-manual.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-27 18:59:46 +0000     4908 bytes  build/configure.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-27 18:59:46 +0000     1319 bytes  build/tasks/add-locale.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-27 18:59:46 +0000      883 bytes  build/tasks/configure.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-27 18:59:46 +0000      667 bytes  build/tasks/fixture.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-27 18:59:46 +0000     2078 bytes  build/tasks/langs.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-27 18:59:46 +0000     4399 bytes  build/tasks/test-webdriver.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-27 18:59:46 +0000      661 bytes  build/tasks/testconfig.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-27 18:59:46 +0000      574 bytes  build/tasks/update-help.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-27 18:59:46 +0000     4480 bytes  build/tasks/validate.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-27 18:59:46 +0000      302 bytes  build/templates.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-27 18:59:46 +0000     1169 bytes  build/test/config.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-27 18:59:46 +0000      185 bytes  build/test/engine.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-27 18:59:46 +0000       37 bytes  circle.yml</tspan>
+<tspan x="10" y="410"> 24.  2017-04-27 18:59:46 +0000    26890 bytes  doc/API.md</tspan>
+<tspan x="10" y="426"> 25.  2017-04-27 18:59:46 +0000     5621 bytes  doc/code-submission-guidelines.md</tspan>
+<tspan x="10" y="442"> 26.  2017-04-27 18:59:46 +0000    12320 bytes  doc/developer-guide.md</tspan>
+<tspan x="10" y="458"> 27.  2017-04-27 18:59:46 +0000     4759 bytes  doc/examples/html-handlebars.md</tspan>
+<tspan x="10" y="474"> 28.  2017-04-27 18:59:46 +0000      251 bytes  doc/examples/jasmine/Gruntfile.js</tspan>
+<tspan x="10" y="490"> 29.  2017-04-27 18:59:46 +0000     1433 bytes  doc/examples/jasmine/README.md</tspan>
+<tspan x="10" y="506"> 30.  2017-04-27 18:59:46 +0000      417 bytes  doc/examples/jasmine/package.json</tspan>
+<tspan x="10" y="522"> 31.  2017-04-27 18:59:46 +0000      894 bytes  doc/examples/jasmine/spec/a11y.js</tspan>
+<tspan x="10" y="538"> 32.  2017-04-27 18:59:46 +0000      212 bytes  doc/examples/mocha/Gruntfile.js</tspan>
+<tspan x="10" y="554"> 33.  2017-04-27 18:59:46 +0000     1421 bytes  doc/examples/mocha/README.md</tspan>
+<tspan x="10" y="570"> 34.  2017-04-27 18:59:46 +0000      426 bytes  doc/examples/mocha/package.json</tspan>
+<tspan x="10" y="586"> 35.  2017-04-27 18:59:46 +0000      590 bytes  doc/examples/mocha/test/a11y.js</tspan>
+<tspan x="10" y="602"> 36.  2017-04-27 18:59:46 +0000     1072 bytes  doc/examples/mocha/test/test.html</tspan>
+<tspan x="10" y="618"> 37.  2017-04-27 18:59:46 +0000      612 bytes  doc/examples/phantomjs/README.md</tspan>
+<tspan x="10" y="634"> 38.  2017-04-27 18:59:46 +0000      987 bytes  doc/examples/phantomjs/axe-phantom.js</tspan>
+<tspan x="10" y="650"> 39.  2017-04-27 18:59:46 +0000      166 bytes  doc/examples/qunit/Gruntfile.js</tspan>
+<tspan x="10" y="666"> 40.  2017-04-27 18:59:46 +0000     1421 bytes  doc/examples/qunit/README.md</tspan>
+<tspan x="10" y="682"> 41.  2017-04-27 18:59:46 +0000      437 bytes  doc/examples/qunit/package.json</tspan>
+<tspan x="10" y="698"> 42.  2017-04-27 18:59:46 +0000      588 bytes  doc/examples/qunit/test/a11y.js</tspan>
+<tspan x="10" y="714"> 43.  2017-04-27 18:59:46 +0000      710 bytes  doc/examples/qunit/test/test.html</tspan>
+<tspan x="10" y="730"> 44.  2017-04-27 18:59:46 +0000      245 bytes  doc/examples/selenium/Gruntfile.js</tspan>
+<tspan x="10" y="746"> 45.  2017-04-27 18:59:46 +0000     1371 bytes  doc/examples/selenium/README.md</tspan>
+<tspan x="10" y="762"> 46.  2017-04-27 18:59:46 +0000      882 bytes  doc/examples/selenium/build/tasks/axe-selenium.j\</tspan>
+<tspan x="10" y="778">s</tspan>
+<tspan x="10" y="794"> 47.  2017-04-27 18:59:46 +0000      430 bytes  doc/examples/selenium/package.json</tspan>
+<tspan x="10" y="810"> 48.  2017-04-27 18:59:46 +0000     5939 bytes  doc/plugins.md</tspan>
+<tspan x="10" y="826"> 49.  2017-04-27 18:59:46 +0000     1932 bytes  doc/projects.md</tspan>
+<tspan x="10" y="842"> 50.  2017-04-27 18:59:46 +0000     7867 bytes  doc/rule-descriptions.md</tspan>
+<tspan x="10" y="858"> 51.  2017-04-27 18:59:46 +0000     2779 bytes  doc/rules-md</tspan>
+<tspan x="10" y="874"> 52.  2017-04-27 18:59:46 +0000       79 bytes  lib/checks/aria/abstractrole.js</tspan>
+<tspan x="10" y="890"> 53.  2017-04-27 18:59:46 +0000      230 bytes  lib/checks/aria/abstractrole.json</tspan>
+<tspan x="10" y="906"> 54.  2017-04-27 18:59:46 +0000      556 bytes  lib/checks/aria/allowed-attr.js</tspan>
+<tspan x="10" y="922"> 55.  2017-04-27 18:59:46 +0000      339 bytes  lib/checks/aria/allowed-attr.json</tspan>
+<tspan x="10" y="938"> 56.  2017-04-27 18:59:46 +0000       67 bytes  lib/checks/aria/invalidrole.js</tspan>
+<tspan x="10" y="954"> 57.  2017-04-27 18:59:46 +0000      222 bytes  lib/checks/aria/invalidrole.json</tspan>
+<tspan x="10" y="970"> 58.  2017-04-27 18:59:46 +0000      393 bytes  lib/checks/aria/required-attr.js</tspan>
+<tspan x="10" y="986"> 59.  2017-04-27 18:59:46 +0000      328 bytes  lib/checks/aria/required-attr.json</tspan>
+<tspan x="10" y="1002"> 60.  2017-04-27 18:59:46 +0000     1610 bytes  lib/checks/aria/required-children.js</tspan>
+<tspan x="10" y="1018"> 61.  2017-04-27 18:59:46 +0000      338 bytes  lib/checks/aria/required-children.json</tspan>
+<tspan x="10" y="1034"> 62.  2017-04-27 18:59:46 +0000     1497 bytes  lib/checks/aria/required-parent.js</tspan>
+<tspan x="10" y="1050"> 63.  2017-04-27 18:59:46 +0000      327 bytes  lib/checks/aria/required-parent.json</tspan>
+<tspan x="10" y="1066"> 64.  2017-04-27 18:59:46 +0000      481 bytes  lib/checks/aria/valid-attr-value.js</tspan>
+<tspan x="10" y="1082"> 65.  2017-04-27 18:59:46 +0000      335 bytes  lib/checks/aria/valid-attr-value.json</tspan>
+<tspan x="10" y="1098"> 66.  2017-04-27 18:59:46 +0000      393 bytes  lib/checks/aria/valid-attr.js</tspan>
+<tspan x="10" y="1114"> 67.  2017-04-27 18:59:46 +0000      365 bytes  lib/checks/aria/valid-attr.json</tspan>
+<tspan x="10" y="1130"> 68.  2017-04-27 18:59:46 +0000     1622 bytes  lib/checks/color/color-contrast.js</tspan>
+<tspan x="10" y="1146"> 69.  2017-04-27 18:59:46 +0000     1085 bytes  lib/checks/color/color-contrast.json</tspan>
+<tspan x="10" y="1162"> 70.  2017-04-27 18:59:46 +0000     2257 bytes  lib/checks/color/link-in-text-block.js</tspan>
+<tspan x="10" y="1178"> 71.  2017-04-27 18:59:46 +0000      963 bytes  lib/checks/color/link-in-text-block.json</tspan>
+<tspan x="10" y="1194"> 72.  2017-04-27 18:59:46 +0000      554 bytes  lib/checks/forms/fieldset-after.js</tspan>
+<tspan x="10" y="1210"> 73.  2017-04-27 18:59:46 +0000     2428 bytes  lib/checks/forms/fieldset.js</tspan>
+<tspan x="10" y="1226"> 74.  2017-04-27 18:59:46 +0000      725 bytes  lib/checks/forms/fieldset.json</tspan>
+<tspan x="10" y="1242"> 75.  2017-04-27 18:59:46 +0000      255 bytes  lib/checks/forms/labelledby-after.js</tspan>
+<tspan x="10" y="1258"> 76.  2017-04-27 18:59:46 +0000      778 bytes  lib/checks/forms/labelledby.js</tspan>
+<tspan x="10" y="1274"> 77.  2017-04-27 18:59:46 +0000      401 bytes  lib/checks/forms/labelledby.json</tspan>
+<tspan x="10" y="1290"> 78.  2017-04-27 18:59:46 +0000      335 bytes  lib/checks/keyboard/accesskeys-after.js</tspan>
+<tspan x="10" y="1306"> 79.  2017-04-27 18:59:46 +0000      133 bytes  lib/checks/keyboard/accesskeys.js</tspan>
+<tspan x="10" y="1322"> 80.  2017-04-27 18:59:46 +0000      285 bytes  lib/checks/keyboard/accesskeys.json</tspan>
+<tspan x="10" y="1338"> 81.  2017-04-27 18:59:46 +0000      197 bytes  lib/checks/keyboard/focusable-no-name.js</tspan>
+<tspan x="10" y="1354"> 82.  2017-04-27 18:59:46 +0000      282 bytes  lib/checks/keyboard/focusable-no-name.json</tspan>
+<tspan x="10" y="1370"> 83.  2017-04-27 18:59:46 +0000       28 bytes  lib/checks/keyboard/tabindex.js</tspan>
+<tspan x="10" y="1386"> 84.  2017-04-27 18:59:46 +0000      241 bytes  lib/checks/keyboard/tabindex.json</tspan>
+<tspan x="10" y="1402"> 85.  2017-04-27 18:59:46 +0000      421 bytes  lib/checks/label/duplicate-img-label.js</tspan>
+<tspan x="10" y="1418"> 86.  2017-04-27 18:59:46 +0000      309 bytes  lib/checks/label/duplicate-img-label.json</tspan>
+<tspan x="10" y="1434"> 87.  2017-04-27 18:59:46 +0000      202 bytes  lib/checks/label/explicit.js</tspan>
+<tspan x="10" y="1450"> 88.  2017-04-27 18:59:46 +0000      246 bytes  lib/checks/label/explicit.json</tspan>
+<tspan x="10" y="1466"> 89.  2017-04-27 18:59:46 +0000      460 bytes  lib/checks/label/help-same-as-label.js</tspan>
+<tspan x="10" y="1482"> 90.  2017-04-27 18:59:46 +0000      334 bytes  lib/checks/label/help-same-as-label.json</tspan>
+<tspan x="10" y="1498"> 91.  2017-04-27 18:59:46 +0000      131 bytes  lib/checks/label/implicit.js</tspan>
+<tspan x="10" y="1514"> 92.  2017-04-27 18:59:46 +0000      266 bytes  lib/checks/label/implicit.json</tspan>
+<tspan x="10" y="1530"> 93.  2017-04-27 18:59:46 +0000      656 bytes  lib/checks/label/multiple-label.js</tspan>
+<tspan x="10" y="1546"> 94.  2017-04-27 18:59:46 +0000      263 bytes  lib/checks/label/multiple-label.json</tspan>
+<tspan x="10" y="1562"> 95.  2017-04-27 18:59:46 +0000      139 bytes  lib/checks/label/title-only.js</tspan>
+<tspan x="10" y="1578"> 96.  2017-04-27 18:59:46 +0000      273 bytes  lib/checks/label/title-only.json</tspan>
+<tspan x="10" y="1594"> 97.  2017-04-27 18:59:46 +0000       83 bytes  lib/checks/language/has-lang.js</tspan>
+<tspan x="10" y="1610"> 98.  2017-04-27 18:59:46 +0000      245 bytes  lib/checks/language/has-lang.json</tspan>
+<tspan x="10" y="1626"> 99.  2017-04-27 18:59:46 +0000      698 bytes  lib/checks/language/valid-lang.js</tspan>
+<tspan x="10" y="1642">100.  2017-04-27 18:59:46 +0000    73144 bytes  lib/checks/language/valid-lang.json</tspan>
+<tspan x="10" y="1658">101.  2017-04-27 18:59:46 +0000       42 bytes  lib/checks/lists/dlitem.js</tspan>
+<tspan x="10" y="1674">102.  2017-04-27 18:59:46 +0000      257 bytes  lib/checks/lists/dlitem.json</tspan>
+<tspan x="10" y="1690">103.  2017-04-27 18:59:46 +0000      204 bytes  lib/checks/lists/has-listitem.js</tspan>
+<tspan x="10" y="1706">104.  2017-04-27 18:59:46 +0000      243 bytes  lib/checks/lists/has-listitem.json</tspan>
+<tspan x="10" y="1722">105.  2017-04-27 18:59:46 +0000      149 bytes  lib/checks/lists/listitem.js</tspan>
+<tspan x="10" y="1738">106.  2017-04-27 18:59:46 +0000      284 bytes  lib/checks/lists/listitem.json</tspan>
+<tspan x="10" y="1754">107.  2017-04-27 18:59:46 +0000      637 bytes  lib/checks/lists/only-dlitems.js</tspan>
+<tspan x="10" y="1770">108.  2017-04-27 18:59:46 +0000      330 bytes  lib/checks/lists/only-dlitems.json</tspan>
+<tspan x="10" y="1786">109.  2017-04-27 18:59:46 +0000      591 bytes  lib/checks/lists/only-listitems.js</tspan>
+<tspan x="10" y="1802">110.  2017-04-27 18:59:46 +0000      318 bytes  lib/checks/lists/only-listitems.json</tspan>
+<tspan x="10" y="1818">111.  2017-04-27 18:59:46 +0000      382 bytes  lib/checks/lists/structured-dlitems.js</tspan>
+<tspan x="10" y="1834">112.  2017-04-27 18:59:46 +0000      333 bytes  lib/checks/lists/structured-dlitems.json</tspan>
+<tspan x="10" y="1850">113.  2017-04-27 18:59:46 +0000      376 bytes  lib/checks/media/caption.js</tspan>
+<tspan x="10" y="1866">114.  2017-04-27 18:59:46 +0000      328 bytes  lib/checks/media/caption.json</tspan>
+<tspan x="10" y="1882">115.  2017-04-27 18:59:46 +0000      314 bytes  lib/checks/media/description.js</tspan>
+<tspan x="10" y="1898">116.  2017-04-27 18:59:46 +0000      365 bytes  lib/checks/media/description.json</tspan>
+<tspan x="10" y="1914">117.  2017-04-27 18:59:46 +0000      312 bytes  lib/checks/mobile/meta-viewport-large.json</tspan>
+<tspan x="10" y="1930">118.  2017-04-27 18:59:46 +0000      746 bytes  lib/checks/mobile/meta-viewport-scale.js</tspan>
+<tspan x="10" y="1946">119.  2017-04-27 18:59:46 +0000      278 bytes  lib/checks/mobile/meta-viewport.json</tspan>
+<tspan x="10" y="1962">120.  2017-04-27 18:59:46 +0000       73 bytes  lib/checks/navigation/header-present.js</tspan>
+<tspan x="10" y="1978">121.  2017-04-27 18:59:46 +0000      214 bytes  lib/checks/navigation/header-present.json</tspan>
+<tspan x="10" y="1994">122.  2017-04-27 18:59:46 +0000      263 bytes  lib/checks/navigation/heading-order-after.js</tspan>
+<tspan x="10" y="2010">123.  2017-04-27 18:59:46 +0000      293 bytes  lib/checks/navigation/heading-order.js</tspan>
+<tspan x="10" y="2026">124.  2017-04-27 18:59:46 +0000      242 bytes  lib/checks/navigation/heading-order.json</tspan>
+<tspan x="10" y="2042">125.  2017-04-27 18:59:46 +0000       88 bytes  lib/checks/navigation/href-no-hash.js</tspan>
+<tspan x="10" y="2058">126.  2017-04-27 18:59:46 +0000      226 bytes  lib/checks/navigation/href-no-hash.json</tspan>
+<tspan x="10" y="2074">127.  2017-04-27 18:59:46 +0000       45 bytes  lib/checks/navigation/internal-link-present.js</tspan>
+<tspan x="10" y="2090">128.  2017-04-27 18:59:46 +0000      229 bytes  lib/checks/navigation/internal-link-present.json</tspan>
+<tspan x="10" y="2106">129.  2017-04-27 18:59:46 +0000       94 bytes  lib/checks/navigation/landmark.js</tspan>
+<tspan x="10" y="2122">130.  2017-04-27 18:59:46 +0000      219 bytes  lib/checks/navigation/landmark.json</tspan>
+<tspan x="10" y="2138">131.  2017-04-27 18:59:46 +0000      142 bytes  lib/checks/navigation/meta-refresh.js</tspan>
+<tspan x="10" y="2154">132.  2017-04-27 18:59:46 +0000      253 bytes  lib/checks/navigation/meta-refresh.json</tspan>
+<tspan x="10" y="2170">133.  2017-04-27 18:59:46 +0000     2264 bytes  lib/checks/navigation/p-as-heading.js</tspan>
+<tspan x="10" y="2186">134.  2017-04-27 18:59:46 +0000      478 bytes  lib/checks/navigation/p-as-heading.json</tspan>
+<tspan x="10" y="2202">135.  2017-04-27 18:59:46 +0000       21 bytes  lib/checks/navigation/region-after.js</tspan>
+<tspan x="10" y="2218">136.  2017-04-27 18:59:46 +0000     1056 bytes  lib/checks/navigation/region.js</tspan>
+<tspan x="10" y="2234">137.  2017-04-27 18:59:46 +0000      259 bytes  lib/checks/navigation/region.json</tspan>
+<tspan x="10" y="2250">138.  2017-04-27 18:59:46 +0000       21 bytes  lib/checks/navigation/skip-link-after.js</tspan>
+<tspan x="10" y="2266">139.  2017-04-27 18:59:46 +0000       89 bytes  lib/checks/navigation/skip-link.js</tspan>
+<tspan x="10" y="2282">140.  2017-04-27 18:59:46 +0000      238 bytes  lib/checks/navigation/skip-link.json</tspan>
+<tspan x="10" y="2298">141.  2017-04-27 18:59:46 +0000      204 bytes  lib/checks/navigation/unique-frame-title-after.j\</tspan>
+<tspan x="10" y="2314">s</tspan>
+<tspan x="10" y="2330">142.  2017-04-27 18:59:46 +0000      102 bytes  lib/checks/navigation/unique-frame-title.js</tspan>
+<tspan x="10" y="2346">143.  2017-04-27 18:59:46 +0000      293 bytes  lib/checks/navigation/unique-frame-title.json</tspan>
+<tspan x="10" y="2362">144.  2017-04-27 18:59:46 +0000      109 bytes  lib/checks/shared/aria-label.js</tspan>
+<tspan x="10" y="2378">145.  2017-04-27 18:59:46 +0000      253 bytes  lib/checks/shared/aria-label.json</tspan>
+<tspan x="10" y="2394">146.  2017-04-27 18:59:46 +0000      170 bytes  lib/checks/shared/aria-labelledby.js</tspan>
+<tspan x="10" y="2410">147.  2017-04-27 18:59:46 +0000      395 bytes  lib/checks/shared/aria-labelledby.json</tspan>
+<tspan x="10" y="2426">148.  2017-04-27 18:59:46 +0000      281 bytes  lib/checks/shared/button-has-visible-text.js</tspan>
+<tspan x="10" y="2442">149.  2017-04-27 18:59:46 +0000      310 bytes  lib/checks/shared/button-has-visible-text.json</tspan>
+<tspan x="10" y="2458">150.  2017-04-27 18:59:46 +0000       92 bytes  lib/checks/shared/doc-has-title.js</tspan>
+<tspan x="10" y="2474">151.  2017-04-27 18:59:46 +0000      258 bytes  lib/checks/shared/doc-has-title.json</tspan>
+<tspan x="10" y="2490">152.  2017-04-27 18:59:46 +0000      161 bytes  lib/checks/shared/duplicate-id-after.js</tspan>
+<tspan x="10" y="2506">153.  2017-04-27 18:59:46 +0000      502 bytes  lib/checks/shared/duplicate-id.js</tspan>
+<tspan x="10" y="2522">154.  2017-04-27 18:59:46 +0000      330 bytes  lib/checks/shared/duplicate-id.json</tspan>
+<tspan x="10" y="2538">155.  2017-04-27 18:59:46 +0000       12 bytes  lib/checks/shared/exists.js</tspan>
+<tspan x="10" y="2554">156.  2017-04-27 18:59:46 +0000      187 bytes  lib/checks/shared/exists.json</tspan>
+<tspan x="10" y="2570">157.  2017-04-27 18:59:46 +0000      126 bytes  lib/checks/shared/has-alt.js</tspan>
+<tspan x="10" y="2586">158.  2017-04-27 18:59:46 +0000      222 bytes  lib/checks/shared/has-alt.json</tspan>
+<tspan x="10" y="2602">159.  2017-04-27 18:59:46 +0000       56 bytes  lib/checks/shared/has-visible-text.js</tspan>
+<tspan x="10" y="2618">160.  2017-04-27 18:59:46 +0000      284 bytes  lib/checks/shared/has-visible-text.json</tspan>
+<tspan x="10" y="2634">161.  2017-04-27 18:59:46 +0000      113 bytes  lib/checks/shared/is-on-screen.js</tspan>
+<tspan x="10" y="2650">162.  2017-04-27 18:59:46 +0000      203 bytes  lib/checks/shared/is-on-screen.json</tspan>
+<tspan x="10" y="2666">163.  2017-04-27 18:59:46 +0000      102 bytes  lib/checks/shared/non-empty-alt.js</tspan>
+<tspan x="10" y="2682">164.  2017-04-27 18:59:46 +0000      263 bytes  lib/checks/shared/non-empty-alt.json</tspan>
+<tspan x="10" y="2698">165.  2017-04-27 18:59:46 +0000      349 bytes  lib/checks/shared/non-empty-if-present.js</tspan>
+<tspan x="10" y="2714">166.  2017-04-27 18:59:46 +0000      337 bytes  lib/checks/shared/non-empty-if-present.json</tspan>
+<tspan x="10" y="2730">167.  2017-04-27 18:59:46 +0000      105 bytes  lib/checks/shared/non-empty-title.js</tspan>
+<tspan x="10" y="2746">168.  2017-04-27 18:59:46 +0000      263 bytes  lib/checks/shared/non-empty-title.json</tspan>
+<tspan x="10" y="2762">169.  2017-04-27 18:59:46 +0000      104 bytes  lib/checks/shared/non-empty-value.js</tspan>
+<tspan x="10" y="2778">170.  2017-04-27 18:59:46 +0000      273 bytes  lib/checks/shared/non-empty-value.json</tspan>
+<tspan x="10" y="2794">171.  2017-04-27 18:59:46 +0000       44 bytes  lib/checks/shared/role-none.js</tspan>
+<tspan x="10" y="2810">172.  2017-04-27 18:59:46 +0000      287 bytes  lib/checks/shared/role-none.json</tspan>
+<tspan x="10" y="2826">173.  2017-04-27 18:59:46 +0000       52 bytes  lib/checks/shared/role-presentation.js</tspan>
+<tspan x="10" y="2842">174.  2017-04-27 18:59:46 +0000      319 bytes  lib/checks/shared/role-presentation.json</tspan>
+<tspan x="10" y="2858">175.  2017-04-27 18:59:46 +0000      294 bytes  lib/checks/tables/caption-faked.js</tspan>
+<tspan x="10" y="2874">176.  2017-04-27 18:59:46 +0000      287 bytes  lib/checks/tables/caption-faked.json</tspan>
+<tspan x="10" y="2890">177.  2017-04-27 18:59:46 +0000       22 bytes  lib/checks/tables/has-caption.js</tspan>
+<tspan x="10" y="2906">178.  2017-04-27 18:59:46 +0000      241 bytes  lib/checks/tables/has-caption.json</tspan>
+<tspan x="10" y="2922">179.  2017-04-27 18:59:46 +0000       22 bytes  lib/checks/tables/has-summary.js</tspan>
+<tspan x="10" y="2938">180.  2017-04-27 18:59:46 +0000      241 bytes  lib/checks/tables/has-summary.json</tspan>
+<tspan x="10" y="2954">181.  2017-04-27 18:59:46 +0000      520 bytes  lib/checks/tables/has-th.js</tspan>
+<tspan x="10" y="2970">182.  2017-04-27 18:59:46 +0000      223 bytes  lib/checks/tables/has-th.json</tspan>
+<tspan x="10" y="2986">183.  2017-04-27 18:59:46 +0000      485 bytes  lib/checks/tables/headers-visible-text.js</tspan>
+<tspan x="10" y="3002">184.  2017-04-27 18:59:46 +0000      104 bytes  lib/checks/tables/html5-scope.js</tspan>
+<tspan x="10" y="3018">185.  2017-04-27 18:59:46 +0000      299 bytes  lib/checks/tables/html5-scope.json</tspan>
+<tspan x="10" y="3034">186.  2017-04-27 18:59:46 +0000      107 bytes  lib/checks/tables/same-caption-summary.js</tspan>
+<tspan x="10" y="3050">187.  2017-04-27 18:59:46 +0000      307 bytes  lib/checks/tables/same-caption-summary.json</tspan>
+<tspan x="10" y="3066">188.  2017-04-27 18:59:46 +0000      198 bytes  lib/checks/tables/scope-value.js</tspan>
+<tspan x="10" y="3082">189.  2017-04-27 18:59:46 +0000      256 bytes  lib/checks/tables/scope-value.json</tspan>
+<tspan x="10" y="3098">190.  2017-04-27 18:59:46 +0000      731 bytes  lib/checks/tables/td-has-header.js</tspan>
+<tspan x="10" y="3114">191.  2017-04-27 18:59:46 +0000      262 bytes  lib/checks/tables/td-has-header.json</tspan>
+<tspan x="10" y="3130">192.  2017-04-27 18:59:46 +0000     1233 bytes  lib/checks/tables/td-headers-attr.js</tspan>
+<tspan x="10" y="3146">193.  2017-04-27 18:59:46 +0000      331 bytes  lib/checks/tables/td-headers-attr.json</tspan>
+<tspan x="10" y="3162">194.  2017-04-27 18:59:46 +0000     1856 bytes  lib/checks/tables/th-has-data-cells.js</tspan>
+<tspan x="10" y="3178">195.  2017-04-27 18:59:46 +0000      325 bytes  lib/checks/tables/th-has-data-cells.json</tspan>
+<tspan x="10" y="3194">196.  2017-04-27 18:59:46 +0000      763 bytes  lib/checks/tables/th-single-row-column.js</tspan>
+<tspan x="10" y="3210">197.  2017-04-27 18:59:46 +0000     2418 bytes  lib/commons/aria/attributes.js</tspan>
+<tspan x="10" y="3226">198.  2017-04-27 18:59:46 +0000    17253 bytes  lib/commons/aria/index.js</tspan>
+<tspan x="10" y="3242">199.  2017-04-27 18:59:46 +0000      801 bytes  lib/commons/aria/label.js</tspan>
+<tspan x="10" y="3258">200.  2017-04-27 18:59:46 +0000     4761 bytes  lib/commons/aria/roles.js</tspan>
+<tspan x="10" y="3274">201.  2017-04-27 18:59:46 +0000     4067 bytes  lib/commons/color/contrast.js</tspan>
+<tspan x="10" y="3290">202.  2017-04-27 18:59:46 +0000     1672 bytes  lib/commons/color/element-is-distinct.js</tspan>
+<tspan x="10" y="3306">203.  2017-04-27 18:59:46 +0000     4975 bytes  lib/commons/color/get-background-color.js</tspan>
+<tspan x="10" y="3322">204.  2017-04-27 18:59:46 +0000      899 bytes  lib/commons/color/get-foreground-color.js</tspan>
+<tspan x="10" y="3338">205.  2017-04-27 18:59:46 +0000     1076 bytes  lib/commons/color/incomplete-data.js</tspan>
+<tspan x="10" y="3354">206.  2017-04-27 18:59:46 +0000       39 bytes  lib/commons/color/index.js</tspan>
+<tspan x="10" y="3370">207.  2017-04-27 18:59:46 +0000      939 bytes  lib/commons/dom/elements-below-floating.js</tspan>
+<tspan x="10" y="3386">208.  2017-04-27 18:59:46 +0000      860 bytes  lib/commons/dom/find-up.js</tspan>
+<tspan x="10" y="3402">209.  2017-04-27 18:59:46 +0000      453 bytes  lib/commons/dom/get-element-by-reference.js</tspan>
+<tspan x="10" y="3418">210.  2017-04-27 18:59:46 +0000      849 bytes  lib/commons/dom/get-element-coordinates.js</tspan>
+<tspan x="10" y="3434">211.  2017-04-27 18:59:46 +0000      755 bytes  lib/commons/dom/get-scroll-offset.js</tspan>
+<tspan x="10" y="3450">212.  2017-04-27 18:59:46 +0000      727 bytes  lib/commons/dom/get-viewport-size.js</tspan>
+<tspan x="10" y="3466">213.  2017-04-27 18:59:46 +0000      693 bytes  lib/commons/dom/has-content.js</tspan>
+<tspan x="10" y="3482">214.  2017-04-27 18:59:46 +0000      640 bytes  lib/commons/dom/idrefs.js</tspan>
+<tspan x="10" y="3498">215.  2017-04-27 18:59:46 +0000       46 bytes  lib/commons/dom/index.js</tspan>
+<tspan x="10" y="3514">216.  2017-04-27 18:59:46 +0000      814 bytes  lib/commons/dom/is-focusable.js</tspan>
+<tspan x="10" y="3530">217.  2017-04-27 18:59:46 +0000      181 bytes  lib/commons/dom/is-html5.js</tspan>
+<tspan x="10" y="3546">218.  2017-04-27 18:59:46 +0000     2648 bytes  lib/commons/dom/is-in-text-block.js</tspan>
+<tspan x="10" y="3562">219.  2017-04-27 18:59:46 +0000      105 bytes  lib/commons/dom/is-node.js</tspan>
+<tspan x="10" y="3578">220.  2017-04-27 18:59:46 +0000     1103 bytes  lib/commons/dom/is-offscreen.js</tspan>
+<tspan x="10" y="3594">221.  2017-04-27 18:59:46 +0000     1659 bytes  lib/commons/dom/is-visible.js</tspan>
+<tspan x="10" y="3610">222.  2017-04-27 18:59:46 +0000      814 bytes  lib/commons/dom/is-visual-content.js</tspan>
+<tspan x="10" y="3626">223.  2017-04-27 18:59:46 +0000     1719 bytes  lib/commons/dom/visually-contains.js</tspan>
+<tspan x="10" y="3642">224.  2017-04-27 18:59:46 +0000     1415 bytes  lib/commons/dom/visually-overlaps.js</tspan>
+<tspan x="10" y="3658">225.  2017-04-27 18:59:46 +0000       40 bytes  lib/commons/index.js</tspan>
+<tspan x="10" y="3674">226.  2017-04-27 18:59:46 +0000       15 bytes  lib/commons/intro.stub</tspan>
+<tspan x="10" y="3690">227.  2017-04-27 18:59:46 +0000       22 bytes  lib/commons/outro.stub</tspan>
+<tspan x="10" y="3706">228.  2017-04-27 18:59:46 +0000      410 bytes  lib/commons/table/get-all-cells.js</tspan>
+<tspan x="10" y="3722">229.  2017-04-27 18:59:46 +0000      655 bytes  lib/commons/table/get-cell-position.js</tspan>
+<tspan x="10" y="3738">230.  2017-04-27 18:59:46 +0000      793 bytes  lib/commons/table/get-headers.js</tspan>
+<tspan x="10" y="3754">231.  2017-04-27 18:59:46 +0000     1338 bytes  lib/commons/table/get-scope.js</tspan>
+<tspan x="10" y="3770">232.  2017-04-27 18:59:46 +0000       52 bytes  lib/commons/table/index.js</tspan>
+<tspan x="10" y="3786">233.  2017-04-27 18:59:46 +0000      278 bytes  lib/commons/table/is-column-header.js</tspan>
+<tspan x="10" y="3802">234.  2017-04-27 18:59:46 +0000      421 bytes  lib/commons/table/is-data-cell.js</tspan>
+<tspan x="10" y="3818">235.  2017-04-27 18:59:46 +0000     4372 bytes  lib/commons/table/is-data-table.js</tspan>
+<tspan x="10" y="3834">236.  2017-04-27 18:59:46 +0000      416 bytes  lib/commons/table/is-header.js</tspan>
+<tspan x="10" y="3850">237.  2017-04-27 18:59:46 +0000      272 bytes  lib/commons/table/is-row-header.js</tspan>
+<tspan x="10" y="3866">238.  2017-04-27 18:59:46 +0000      918 bytes  lib/commons/table/to-grid.js</tspan>
+<tspan x="10" y="3882">239.  2017-04-27 18:59:46 +0000     1648 bytes  lib/commons/table/traverse.js</tspan>
+<tspan x="10" y="3898">240.  2017-04-27 18:59:46 +0000     8178 bytes  lib/commons/text/accessible-text.js</tspan>
+<tspan x="10" y="3914">241.  2017-04-27 18:59:46 +0000       48 bytes  lib/commons/text/index.js</tspan>
+<tspan x="10" y="3930">242.  2017-04-27 18:59:46 +0000      765 bytes  lib/commons/text/label.js</tspan>
+<tspan x="10" y="3946">243.  2017-04-27 18:59:46 +0000      173 bytes  lib/commons/text/sanitize.js</tspan>
+<tspan x="10" y="3962">244.  2017-04-27 18:59:46 +0000      564 bytes  lib/commons/text/visible.js</tspan>
+<tspan x="10" y="3978">245.  2017-04-27 18:59:46 +0000       76 bytes  lib/commons/utils/index.js</tspan>
+<tspan x="10" y="3994">246.  2017-04-27 18:59:46 +0000      115 bytes  lib/commons/utils/to-array.js</tspan>
+<tspan x="10" y="4010">247.  2017-04-27 18:59:46 +0000      129 bytes  lib/commons/utils/token-list.js</tspan>
+<tspan x="10" y="4026">248.  2017-04-27 18:59:46 +0000     8477 bytes  lib/core/base/audit.js</tspan>
+<tspan x="10" y="4042">249.  2017-04-27 18:59:46 +0000      633 bytes  lib/core/base/check-result.js</tspan>
+<tspan x="10" y="4058">250.  2017-04-27 18:59:46 +0000     2847 bytes  lib/core/base/check.js</tspan>
+<tspan x="10" y="4074">251.  2017-04-27 18:59:46 +0000     5821 bytes  lib/core/base/context.js</tspan>
+<tspan x="10" y="4090">252.  2017-04-27 18:59:46 +0000      712 bytes  lib/core/base/rule-result.js</tspan>
+<tspan x="10" y="4106">253.  2017-04-27 18:59:46 +0000     8379 bytes  lib/core/base/rule.js</tspan>
+<tspan x="10" y="4122">254.  2017-04-27 18:59:46 +0000     1281 bytes  lib/core/constants.js</tspan>
+<tspan x="10" y="4138">255.  2017-04-27 18:59:46 +0000     1019 bytes  lib/core/index.js</tspan>
+<tspan x="10" y="4154">256.  2017-04-27 18:59:46 +0000      310 bytes  lib/core/log.js</tspan>
+<tspan x="10" y="4170">257.  2017-04-27 18:59:46 +0000     1063 bytes  lib/core/public/a11y-check.js</tspan>
+<tspan x="10" y="4186">258.  2017-04-27 18:59:46 +0000     1027 bytes  lib/core/public/cleanup-plugins.js</tspan>
+<tspan x="10" y="4202">259.  2017-04-27 18:59:46 +0000      742 bytes  lib/core/public/configure.js</tspan>
+<tspan x="10" y="4218">260.  2017-04-27 18:59:46 +0000      720 bytes  lib/core/public/get-rules.js</tspan>
+<tspan x="10" y="4234">261.  2017-04-27 18:59:46 +0000     1243 bytes  lib/core/public/load.js</tspan>
+<tspan x="10" y="4250">262.  2017-04-27 18:59:46 +0000      925 bytes  lib/core/public/plugins.js</tspan>
+<tspan x="10" y="4266">263.  2017-04-27 18:59:46 +0000      435 bytes  lib/core/public/reporter.js</tspan>
+<tspan x="10" y="4282">264.  2017-04-27 18:59:46 +0000      213 bytes  lib/core/public/reset.js</tspan>
+<tspan x="10" y="4298">265.  2017-04-27 18:59:46 +0000     1664 bytes  lib/core/public/run-rules.js</tspan>
+<tspan x="10" y="4314">266.  2017-04-27 18:59:46 +0000     3451 bytes  lib/core/public/run.js</tspan>
+<tspan x="10" y="4330">267.  2017-04-27 18:59:46 +0000      889 bytes  lib/core/reporters/helpers/failure-summary.js</tspan>
+<tspan x="10" y="4346">268.  2017-04-27 18:59:46 +0000       40 bytes  lib/core/reporters/helpers/index.js</tspan>
+<tspan x="10" y="4362">269.  2017-04-27 18:59:46 +0000     2023 bytes  lib/core/reporters/helpers/process-aggregate.js</tspan>
+<tspan x="10" y="4378">270.  2017-04-27 18:59:46 +0000      415 bytes  lib/core/reporters/na.js</tspan>
+<tspan x="10" y="4394">271.  2017-04-27 18:59:46 +0000      334 bytes  lib/core/reporters/no-passes.js</tspan>
+<tspan x="10" y="4410">272.  2017-04-27 18:59:46 +0000      181 bytes  lib/core/reporters/raw.js</tspan>
+<tspan x="10" y="4426">273.  2017-04-27 18:59:46 +0000      563 bytes  lib/core/reporters/v1.js</tspan>
+<tspan x="10" y="4442">274.  2017-04-27 18:59:46 +0000      420 bytes  lib/core/reporters/v2.js</tspan>
+<tspan x="10" y="4458">275.  2017-04-27 18:59:46 +0000      627 bytes  lib/core/utils/aggregate.js</tspan>
+<tspan x="10" y="4474">276.  2017-04-27 18:59:46 +0000     2108 bytes  lib/core/utils/aggregateChecks.js</tspan>
+<tspan x="10" y="4490">277.  2017-04-27 18:59:46 +0000     1182 bytes  lib/core/utils/aggregateResult.js</tspan>
+<tspan x="10" y="4506">278.  2017-04-27 18:59:46 +0000     1531 bytes  lib/core/utils/aggregateRule.js</tspan>
+<tspan x="10" y="4522">279.  2017-04-27 18:59:46 +0000      512 bytes  lib/core/utils/are-styles-set.js</tspan>
+<tspan x="10" y="4538">280.  2017-04-27 18:59:46 +0000      971 bytes  lib/core/utils/check-helper.js</tspan>
+<tspan x="10" y="4554">281.  2017-04-27 18:59:46 +0000      594 bytes  lib/core/utils/clone.js</tspan>
+<tspan x="10" y="4570">282.  2017-04-27 18:59:46 +0000     3082 bytes  lib/core/utils/collect-results-from-frames.js</tspan>
+<tspan x="10" y="4586">283.  2017-04-27 18:59:46 +0000      558 bytes  lib/core/utils/contains.js</tspan>
+<tspan x="10" y="4602">284.  2017-04-27 18:59:46 +0000     2103 bytes  lib/core/utils/dq-element.js</tspan>
+<tspan x="10" y="4618">285.  2017-04-27 18:59:46 +0000      802 bytes  lib/core/utils/element-matches.js</tspan>
+<tspan x="10" y="4634">286.  2017-04-27 18:59:46 +0000     2762 bytes  lib/core/utils/escape-selector.js</tspan>
+<tspan x="10" y="4650">287.  2017-04-27 18:59:46 +0000      416 bytes  lib/core/utils/extend-meta-data.js</tspan>
+<tspan x="10" y="4666">288.  2017-04-27 18:59:46 +0000      284 bytes  lib/core/utils/finalize-result.js</tspan>
+<tspan x="10" y="4682">289.  2017-04-27 18:59:46 +0000      488 bytes  lib/core/utils/find-by.js</tspan>
+<tspan x="10" y="4698">290.  2017-04-27 18:59:46 +0000      295 bytes  lib/core/utils/get-all-checks.js</tspan>
+<tspan x="10" y="4714">291.  2017-04-27 18:59:46 +0000     1106 bytes  lib/core/utils/get-check-option.js</tspan>
+<tspan x="10" y="4730">292.  2017-04-27 18:59:46 +0000     2433 bytes  lib/core/utils/get-selector.js</tspan>
+<tspan x="10" y="4746">293.  2017-04-27 18:59:46 +0000     2315 bytes  lib/core/utils/get-xpath.js</tspan>
+<tspan x="10" y="4762">294.  2017-04-27 18:59:46 +0000       48 bytes  lib/core/utils/index.js</tspan>
+<tspan x="10" y="4778">295.  2017-04-27 18:59:46 +0000      834 bytes  lib/core/utils/inject-style.js</tspan>
+<tspan x="10" y="4794">296.  2017-04-27 18:59:46 +0000      684 bytes  lib/core/utils/is-hidden.js</tspan>
+<tspan x="10" y="4810">297.  2017-04-27 18:59:46 +0000     2881 bytes  lib/core/utils/merge-results.js</tspan>
+<tspan x="10" y="4826">298.  2017-04-27 18:59:46 +0000      458 bytes  lib/core/utils/node-sorter.js</tspan>
+<tspan x="10" y="4842">299.  2017-04-27 18:59:46 +0000     3385 bytes  lib/core/utils/performance-timer.js</tspan>
+<tspan x="10" y="4858">300.  2017-04-27 18:59:46 +0000     7093 bytes  lib/core/utils/pollyfills.js</tspan>
+<tspan x="10" y="4874">301.  2017-04-27 18:59:46 +0000     1738 bytes  lib/core/utils/publish-metadata.js</tspan>
+<tspan x="10" y="4890">302.  2017-04-27 18:59:46 +0000     3109 bytes  lib/core/utils/queue.js</tspan>
+<tspan x="10" y="4906">303.  2017-04-27 18:59:46 +0000     6311 bytes  lib/core/utils/respondable.js</tspan>
+<tspan x="10" y="4922">304.  2017-04-27 18:59:46 +0000     2462 bytes  lib/core/utils/rule-should-run.js</tspan>
+<tspan x="10" y="4938">305.  2017-04-27 18:59:46 +0000     2307 bytes  lib/core/utils/select.js</tspan>
+<tspan x="10" y="4954">306.  2017-04-27 18:59:46 +0000      280 bytes  lib/core/utils/to-array.js</tspan>
+<tspan x="10" y="4970">307.  2017-04-27 18:59:46 +0000     6601 bytes  lib/core/utils/uuid.js</tspan>
+<tspan x="10" y="4986">308.  2017-04-27 18:59:46 +0000      654 bytes  lib/intro.stub</tspan>
+<tspan x="10" y="5002">309.  2017-04-27 18:59:46 +0000      145 bytes  lib/misc/any-failure-summary.json</tspan>
+<tspan x="10" y="5018">310.  2017-04-27 18:59:46 +0000      146 bytes  lib/misc/none-failure-summary.json</tspan>
+<tspan x="10" y="5034">311.  2017-04-27 18:59:46 +0000       51 bytes  lib/outro.stub</tspan>
+<tspan x="10" y="5050">312.  2017-04-27 18:59:46 +0000      353 bytes  lib/rules/accesskeys.json</tspan>
+<tspan x="10" y="5066">313.  2017-04-27 18:59:46 +0000      486 bytes  lib/rules/area-alt.json</tspan>
+<tspan x="10" y="5082">314.  2017-04-27 18:59:46 +0000      383 bytes  lib/rules/aria-allowed-attr-matches.js</tspan>
+<tspan x="10" y="5098">315.  2017-04-27 18:59:46 +0000      382 bytes  lib/rules/aria-allowed-attr.json</tspan>
+<tspan x="10" y="5114">316.  2017-04-27 18:59:46 +0000      201 bytes  lib/rules/aria-has-attr-matches.js</tspan>
+<tspan x="10" y="5130">317.  2017-04-27 18:59:46 +0000      367 bytes  lib/rules/aria-required-attr.json</tspan>
+<tspan x="10" y="5146">318.  2017-04-27 18:59:46 +0000      376 bytes  lib/rules/aria-required-children.json</tspan>
+<tspan x="10" y="5162">319.  2017-04-27 18:59:46 +0000      389 bytes  lib/rules/aria-required-parent.json</tspan>
+<tspan x="10" y="5178">320.  2017-04-27 18:59:46 +0000      383 bytes  lib/rules/aria-roles.json</tspan>
+<tspan x="10" y="5194">321.  2017-04-27 18:59:46 +0000      387 bytes  lib/rules/aria-valid-attr-value.json</tspan>
+<tspan x="10" y="5210">322.  2017-04-27 18:59:46 +0000      365 bytes  lib/rules/aria-valid-attr.json</tspan>
+<tspan x="10" y="5226">323.  2017-04-27 18:59:46 +0000      386 bytes  lib/rules/audio-caption.json</tspan>
+<tspan x="10" y="5242">324.  2017-04-27 18:59:46 +0000      391 bytes  lib/rules/blink.json</tspan>
+<tspan x="10" y="5258">325.  2017-04-27 18:59:46 +0000      617 bytes  lib/rules/button-name.json</tspan>
+<tspan x="10" y="5274">326.  2017-04-27 18:59:46 +0000       40 bytes  lib/rules/bypass-matches.js</tspan>
+<tspan x="10" y="5290">327.  2017-04-27 18:59:46 +0000      527 bytes  lib/rules/bypass.json</tspan>
+<tspan x="10" y="5306">328.  2017-04-27 18:59:46 +0000      450 bytes  lib/rules/checkboxgroup.json</tspan>
+<tspan x="10" y="5322">329.  2017-04-27 18:59:46 +0000     2359 bytes  lib/rules/color-contrast-matches.js</tspan>
+<tspan x="10" y="5338">330.  2017-04-27 18:59:46 +0000      472 bytes  lib/rules/color-contrast.json</tspan>
+<tspan x="10" y="5354">331.  2017-04-27 18:59:46 +0000      240 bytes  lib/rules/data-table-large-matches.js</tspan>
+<tspan x="10" y="5370">332.  2017-04-27 18:59:46 +0000       43 bytes  lib/rules/data-table-matches.js</tspan>
+<tspan x="10" y="5386">333.  2017-04-27 18:59:46 +0000      432 bytes  lib/rules/definition-list.json</tspan>
+<tspan x="10" y="5402">334.  2017-04-27 18:59:46 +0000      354 bytes  lib/rules/dlitem.json</tspan>
+<tspan x="10" y="5418">335.  2017-04-27 18:59:46 +0000      399 bytes  lib/rules/document-title.json</tspan>
+<tspan x="10" y="5434">336.  2017-04-27 18:59:46 +0000      335 bytes  lib/rules/duplicate-id.json</tspan>
+<tspan x="10" y="5450">337.  2017-04-27 18:59:46 +0000      402 bytes  lib/rules/empty-heading.json</tspan>
+<tspan x="10" y="5466">338.  2017-04-27 18:59:46 +0000      104 bytes  lib/rules/frame-title-has-text.js</tspan>
+<tspan x="10" y="5482">339.  2017-04-27 18:59:46 +0000      454 bytes  lib/rules/frame-title-unique.json</tspan>
+<tspan x="10" y="5498">340.  2017-04-27 18:59:46 +0000      484 bytes  lib/rules/frame-title.json</tspan>
+<tspan x="10" y="5514">341.  2017-04-27 18:59:46 +0000      373 bytes  lib/rules/heading-order.json</tspan>
+<tspan x="10" y="5530">342.  2017-04-27 18:59:46 +0000      482 bytes  lib/rules/href-no-hash.json</tspan>
+<tspan x="10" y="5546">343.  2017-04-27 18:59:46 +0000      321 bytes  lib/rules/html-has-lang.json</tspan>
+<tspan x="10" y="5562">344.  2017-04-27 18:59:46 +0000      369 bytes  lib/rules/html-lang-valid.json</tspan>
+<tspan x="10" y="5578">345.  2017-04-27 18:59:46 +0000      503 bytes  lib/rules/image-alt.json</tspan>
+<tspan x="10" y="5594">346.  2017-04-27 18:59:46 +0000      433 bytes  lib/rules/img-redundant-alt.json</tspan>
+<tspan x="10" y="5610">347.  2017-04-27 18:59:46 +0000      467 bytes  lib/rules/input-image-alt.json</tspan>
+<tspan x="10" y="5626">348.  2017-04-27 18:59:46 +0000      509 bytes  lib/rules/label-title-only.json</tspan>
+<tspan x="10" y="5642">349.  2017-04-27 18:59:46 +0000      609 bytes  lib/rules/label.json</tspan>
+<tspan x="10" y="5658">350.  2017-04-27 18:59:46 +0000       44 bytes  lib/rules/layout-table-matches.js</tspan>
+<tspan x="10" y="5674">351.  2017-04-27 18:59:46 +0000      454 bytes  lib/rules/layout-table.json</tspan>
+<tspan x="10" y="5690">352.  2017-04-27 18:59:46 +0000      196 bytes  lib/rules/link-in-text-block-matches.js</tspan>
+<tspan x="10" y="5706">353.  2017-04-27 18:59:46 +0000      513 bytes  lib/rules/link-in-text-block.json</tspan>
+<tspan x="10" y="5722">354.  2017-04-27 18:59:46 +0000      521 bytes  lib/rules/link-name.json</tspan>
+<tspan x="10" y="5738">355.  2017-04-27 18:59:46 +0000      377 bytes  lib/rules/list.json</tspan>
+<tspan x="10" y="5754">356.  2017-04-27 18:59:46 +0000      330 bytes  lib/rules/listitem.json</tspan>
+<tspan x="10" y="5770">357.  2017-04-27 18:59:46 +0000      351 bytes  lib/rules/marquee.json</tspan>
+<tspan x="10" y="5786">358.  2017-04-27 18:59:46 +0000      404 bytes  lib/rules/meta-refresh.json</tspan>
+<tspan x="10" y="5802">359.  2017-04-27 18:59:46 +0000      422 bytes  lib/rules/meta-viewport-large.json</tspan>
+<tspan x="10" y="5818">360.  2017-04-27 18:59:46 +0000      412 bytes  lib/rules/meta-viewport.json</tspan>
+<tspan x="10" y="5834">361.  2017-04-27 18:59:46 +0000      440 bytes  lib/rules/object-alt.json</tspan>
+<tspan x="10" y="5850">362.  2017-04-27 18:59:46 +0000      552 bytes  lib/rules/p-as-heading-matches.js</tspan>
+<tspan x="10" y="5866">363.  2017-04-27 18:59:46 +0000      410 bytes  lib/rules/p-as-heading.json</tspan>
+<tspan x="10" y="5882">364.  2017-04-27 18:59:46 +0000      437 bytes  lib/rules/radiogroup.json</tspan>
+<tspan x="10" y="5898">365.  2017-04-27 18:59:46 +0000      361 bytes  lib/rules/region.json</tspan>
+<tspan x="10" y="5914">366.  2017-04-27 18:59:46 +0000      377 bytes  lib/rules/scope-attr-valid.json</tspan>
+<tspan x="10" y="5930">367.  2017-04-27 18:59:46 +0000      381 bytes  lib/rules/server-side-image-map.json</tspan>
+<tspan x="10" y="5946">368.  2017-04-27 18:59:46 +0000      364 bytes  lib/rules/skip-link.json</tspan>
+<tspan x="10" y="5962">369.  2017-04-27 18:59:46 +0000      332 bytes  lib/rules/tabindex.json</tspan>
+<tspan x="10" y="5978">370.  2017-04-27 18:59:46 +0000      380 bytes  lib/rules/table-duplicate-name.json</tspan>
+<tspan x="10" y="5994">371.  2017-04-27 18:59:46 +0000      472 bytes  lib/rules/table-fake-caption.json</tspan>
+<tspan x="10" y="6010">372.  2017-04-27 18:59:46 +0000      513 bytes  lib/rules/td-has-header.json</tspan>
+<tspan x="10" y="6026">373.  2017-04-27 18:59:46 +0000      477 bytes  lib/rules/td-headers-attr.json</tspan>
+<tspan x="10" y="6042">374.  2017-04-27 18:59:46 +0000      484 bytes  lib/rules/th-has-data-cells.json</tspan>
+<tspan x="10" y="6058">375.  2017-04-27 18:59:46 +0000      347 bytes  lib/rules/valid-lang.json</tspan>
+<tspan x="10" y="6074">376.  2017-04-27 18:59:46 +0000      396 bytes  lib/rules/video-caption.json</tspan>
+<tspan x="10" y="6090">377.  2017-04-27 18:59:46 +0000      418 bytes  lib/rules/video-description.json</tspan>
+<tspan x="10" y="6106">378.  2017-04-27 18:59:46 +0000       83 bytes  lib/rules/window-is-top.js</tspan>
+<tspan x="10" y="6122">379.  2017-04-27 18:59:46 +0000     1650 bytes  locales/nl.json</tspan>
+<tspan x="10" y="6138">380.  2017-04-27 18:59:46 +0000     3775 bytes  package.json</tspan>
+<tspan x="10" y="6154">381.  2017-04-27 18:59:46 +0000     2964 bytes  test/checks/aria/allowed-attr.js</tspan>
+<tspan x="10" y="6170">382.  2017-04-27 18:59:46 +0000     1612 bytes  test/checks/aria/required-attr.js</tspan>
+<tspan x="10" y="6186">383.  2017-04-27 18:59:46 +0000     4973 bytes  test/checks/aria/required-children.js</tspan>
+<tspan x="10" y="6202">384.  2017-04-27 18:59:46 +0000     2390 bytes  test/checks/aria/required-parent.js</tspan>
+<tspan x="10" y="6218">385.  2017-04-27 18:59:46 +0000     3337 bytes  test/checks/aria/valid-attr-value.js</tspan>
+<tspan x="10" y="6234">386.  2017-04-27 18:59:46 +0000     2105 bytes  test/checks/aria/valid-attr.js</tspan>
+<tspan x="10" y="6250">387.  2017-04-27 18:59:46 +0000     7516 bytes  test/checks/color/color-contrast.js</tspan>
+<tspan x="10" y="6266">388.  2017-04-27 18:59:46 +0000     5915 bytes  test/checks/color/link-in-text-block.js</tspan>
+<tspan x="10" y="6282">389.  2017-04-27 18:59:46 +0000     1433 bytes  test/checks/forms/fieldset-after.js</tspan>
+<tspan x="10" y="6298">390.  2017-04-27 18:59:46 +0000    10158 bytes  test/checks/forms/fieldset.js</tspan>
+<tspan x="10" y="6314">391.  2017-04-27 18:59:46 +0000      818 bytes  test/checks/forms/labelledby-after.js</tspan>
+<tspan x="10" y="6330">392.  2017-04-27 18:59:46 +0000     4726 bytes  test/checks/forms/labelledby.js</tspan>
+<tspan x="10" y="6346">393.  2017-04-27 18:59:46 +0000     5242 bytes  test/checks/index.html</tspan>
+<tspan x="10" y="6362">394.  2017-04-27 18:59:46 +0000     2049 bytes  test/checks/keyboard/accesskeys.js</tspan>
+<tspan x="10" y="6378">395.  2017-04-27 18:59:46 +0000     1366 bytes  test/checks/keyboard/focusable-no-name.js</tspan>
+<tspan x="10" y="6394">396.  2017-04-27 18:59:46 +0000      616 bytes  test/checks/keyboard/tabindex.js</tspan>
+<tspan x="10" y="6410">397.  2017-04-27 18:59:46 +0000     2367 bytes  test/checks/label/duplicate-img-label.js</tspan>
+<tspan x="10" y="6426">398.  2017-04-27 18:59:46 +0000     1247 bytes  test/checks/label/explicit.js</tspan>
+<tspan x="10" y="6442">399.  2017-04-27 18:59:46 +0000     1681 bytes  test/checks/label/help-same-as-label.js</tspan>
+<tspan x="10" y="6458">400.  2017-04-27 18:59:46 +0000     1222 bytes  test/checks/label/implicit.js</tspan>
+<tspan x="10" y="6474">401.  2017-04-27 18:59:46 +0000     4739 bytes  test/checks/label/multiple-label.js</tspan>
+<tspan x="10" y="6490">402.  2017-04-27 18:59:46 +0000     1021 bytes  test/checks/label/title-only.js</tspan>
+<tspan x="10" y="6506">403.  2017-04-27 18:59:46 +0000     1055 bytes  test/checks/language/has-lang.js</tspan>
+<tspan x="10" y="6522">404.  2017-04-27 18:59:46 +0000     4238 bytes  test/checks/language/valid-lang.js</tspan>
+<tspan x="10" y="6538">405.  2017-04-27 18:59:46 +0000      636 bytes  test/checks/lists/dlitem.js</tspan>
+<tspan x="10" y="6554">406.  2017-04-27 18:59:46 +0000     1196 bytes  test/checks/lists/has-listitem.js</tspan>
+<tspan x="10" y="6570">407.  2017-04-27 18:59:46 +0000     1147 bytes  test/checks/lists/listitem.js</tspan>
+<tspan x="10" y="6586">408.  2017-04-27 18:59:46 +0000     4404 bytes  test/checks/lists/only-dlitems.js</tspan>
+<tspan x="10" y="6602">409.  2017-04-27 18:59:46 +0000     4025 bytes  test/checks/lists/only-listitems.js</tspan>
+<tspan x="10" y="6618">410.  2017-04-27 18:59:46 +0000     2137 bytes  test/checks/lists/structured-dlitems.js</tspan>
+<tspan x="10" y="6634">411.  2017-04-27 18:59:46 +0000      854 bytes  test/checks/media/caption.js</tspan>
+<tspan x="10" y="6650">412.  2017-04-27 18:59:46 +0000      878 bytes  test/checks/media/description.js</tspan>
+<tspan x="10" y="6666">413.  2017-04-27 18:59:46 +0000     4182 bytes  test/checks/mobile/meta-viewport-scale.js</tspan>
+<tspan x="10" y="6682">414.  2017-04-27 18:59:46 +0000     1187 bytes  test/checks/navigation/header-present.js</tspan>
+<tspan x="10" y="6698">415.  2017-04-27 18:59:46 +0000     2621 bytes  test/checks/navigation/heading-order.js</tspan>
+<tspan x="10" y="6714">416.  2017-04-27 18:59:46 +0000      845 bytes  test/checks/navigation/href-no-hash.js</tspan>
+<tspan x="10" y="6730">417.  2017-04-27 18:59:46 +0000      565 bytes  test/checks/navigation/internal-link-present.js</tspan>
+<tspan x="10" y="6746">418.  2017-04-27 18:59:46 +0000      659 bytes  test/checks/navigation/landmark.js</tspan>
+<tspan x="10" y="6762">419.  2017-04-27 18:59:46 +0000     1453 bytes  test/checks/navigation/meta-refresh.js</tspan>
+<tspan x="10" y="6778">420.  2017-04-27 18:59:46 +0000     6036 bytes  test/checks/navigation/p-as-heading.js</tspan>
+<tspan x="10" y="6794">421.  2017-04-27 18:59:46 +0000     4042 bytes  test/checks/navigation/region.js</tspan>
+<tspan x="10" y="6810">422.  2017-04-27 18:59:46 +0000     1472 bytes  test/checks/navigation/skip-link.js</tspan>
+<tspan x="10" y="6826">423.  2017-04-27 18:59:46 +0000      751 bytes  test/checks/navigation/unique-frame-title-after.\</tspan>
+<tspan x="10" y="6842">js</tspan>
+<tspan x="10" y="6858">424.  2017-04-27 18:59:46 +0000      827 bytes  test/checks/navigation/unique-frame-title.js</tspan>
+<tspan x="10" y="6874">425.  2017-04-27 18:59:46 +0000      939 bytes  test/checks/shared/abstractrole.js</tspan>
+<tspan x="10" y="6890">426.  2017-04-27 18:59:46 +0000     1118 bytes  test/checks/shared/aria-label.js</tspan>
+<tspan x="10" y="6906">427.  2017-04-27 18:59:46 +0000     2209 bytes  test/checks/shared/aria-labelledby.js</tspan>
+<tspan x="10" y="6922">428.  2017-04-27 18:59:46 +0000      825 bytes  test/checks/shared/doc-has-title.js</tspan>
+<tspan x="10" y="6938">429.  2017-04-27 18:59:46 +0000     1617 bytes  test/checks/shared/duplicate-id.js</tspan>
+<tspan x="10" y="6954">430.  2017-04-27 18:59:46 +0000      140 bytes  test/checks/shared/exists.js</tspan>
+<tspan x="10" y="6970">431.  2017-04-27 18:59:46 +0000      590 bytes  test/checks/shared/has-alt.js</tspan>
+<tspan x="10" y="6986">432.  2017-04-27 18:59:46 +0000      896 bytes  test/checks/shared/has-visible-text.js</tspan>
+<tspan x="10" y="7002">433.  2017-04-27 18:59:46 +0000     1182 bytes  test/checks/shared/invalidrole.js</tspan>
+<tspan x="10" y="7018">434.  2017-04-27 18:59:46 +0000     1104 bytes  test/checks/shared/is-on-screen.js</tspan>
+<tspan x="10" y="7034">435.  2017-04-27 18:59:46 +0000     1091 bytes  test/checks/shared/non-empty-alt.js</tspan>
+<tspan x="10" y="7050">436.  2017-04-27 18:59:46 +0000     1942 bytes  test/checks/shared/non-empty-if-present.js</tspan>
+<tspan x="10" y="7066">437.  2017-04-27 18:59:46 +0000     1111 bytes  test/checks/shared/non-empty-title.js</tspan>
+<tspan x="10" y="7082">438.  2017-04-27 18:59:46 +0000     1120 bytes  test/checks/shared/non-empty-value.js</tspan>
+<tspan x="10" y="7098">439.  2017-04-27 18:59:46 +0000      811 bytes  test/checks/shared/role-none.js</tspan>
+<tspan x="10" y="7114">440.  2017-04-27 18:59:46 +0000      867 bytes  test/checks/shared/role-presentation.js</tspan>
+<tspan x="10" y="7130">441.  2017-04-27 18:59:46 +0000     2057 bytes  test/checks/tables/caption-faked.js</tspan>
+<tspan x="10" y="7146">442.  2017-04-27 18:59:46 +0000      988 bytes  test/checks/tables/has-caption.js</tspan>
+<tspan x="10" y="7162">443.  2017-04-27 18:59:46 +0000      985 bytes  test/checks/tables/has-summary.js</tspan>
+<tspan x="10" y="7178">444.  2017-04-27 18:59:46 +0000     1689 bytes  test/checks/tables/has-th.js</tspan>
+<tspan x="10" y="7194">445.  2017-04-27 18:59:46 +0000      990 bytes  test/checks/tables/html5-scope.js</tspan>
+<tspan x="10" y="7210">446.  2017-04-27 18:59:46 +0000     1262 bytes  test/checks/tables/same-caption-summary.js</tspan>
+<tspan x="10" y="7226">447.  2017-04-27 18:59:46 +0000      872 bytes  test/checks/tables/scope-value.js</tspan>
+<tspan x="10" y="7242">448.  2017-04-27 18:59:46 +0000     5915 bytes  test/checks/tables/td-has-header.js</tspan>
+<tspan x="10" y="7258">449.  2017-04-27 18:59:46 +0000     3444 bytes  test/checks/tables/td-headers-attr.js</tspan>
+<tspan x="10" y="7274">450.  2017-04-27 18:59:46 +0000     3967 bytes  test/checks/tables/th-has-data-cells.js</tspan>
+<tspan x="10" y="7290">451.  2017-04-27 18:59:46 +0000        0 bytes  test/checks/theme.css</tspan>
+<tspan x="10" y="7306">452.  2017-04-27 18:59:46 +0000    10442 bytes  test/commons/aria/attributes.js</tspan>
+<tspan x="10" y="7322">453.  2017-04-27 18:59:46 +0000     2055 bytes  test/commons/aria/label.js</tspan>
+<tspan x="10" y="7338">454.  2017-04-27 18:59:46 +0000     5704 bytes  test/commons/aria/roles.js</tspan>
+<tspan x="10" y="7354">455.  2017-04-27 18:59:46 +0000     5675 bytes  test/commons/color/contrast.js</tspan>
+<tspan x="10" y="7370">456.  2017-04-27 18:59:46 +0000     5717 bytes  test/commons/color/element-is-distinct.js</tspan>
+<tspan x="10" y="7386">457.  2017-04-27 18:59:46 +0000    18374 bytes  test/commons/color/get-background-color.js</tspan>
+<tspan x="10" y="7402">458.  2017-04-27 18:59:46 +0000     2843 bytes  test/commons/color/get-foreground-color.js</tspan>
+<tspan x="10" y="7418">459.  2017-04-27 18:59:46 +0000     1360 bytes  test/commons/color/incomplete-data.js</tspan>
+<tspan x="10" y="7434">460.  2017-04-27 18:59:46 +0000     1133 bytes  test/commons/dom/find-up.js</tspan>
+<tspan x="10" y="7450">461.  2017-04-27 18:59:46 +0000     2131 bytes  test/commons/dom/get-element-by-reference.js</tspan>
+<tspan x="10" y="7466">462.  2017-04-27 18:59:46 +0000     2201 bytes  test/commons/dom/get-element-coordinates.js</tspan>
+<tspan x="10" y="7482">463.  2017-04-27 18:59:46 +0000     1235 bytes  test/commons/dom/get-scroll-offset.js</tspan>
+<tspan x="10" y="7498">464.  2017-04-27 18:59:46 +0000     1009 bytes  test/commons/dom/get-viewport-size.js</tspan>
+<tspan x="10" y="7514">465.  2017-04-27 18:59:46 +0000     1479 bytes  test/commons/dom/has-content.js</tspan>
+<tspan x="10" y="7530">466.  2017-04-27 18:59:46 +0000     1512 bytes  test/commons/dom/idrefs.js</tspan>
+<tspan x="10" y="7546">467.  2017-04-27 18:59:46 +0000     3492 bytes  test/commons/dom/is-focusable.js</tspan>
+<tspan x="10" y="7562">468.  2017-04-27 18:59:46 +0000      611 bytes  test/commons/dom/is-html5.js</tspan>
+<tspan x="10" y="7578">469.  2017-04-27 18:59:46 +0000     4384 bytes  test/commons/dom/is-in-text-block.js</tspan>
+<tspan x="10" y="7594">470.  2017-04-27 18:59:46 +0000     1287 bytes  test/commons/dom/is-node.js</tspan>
+<tspan x="10" y="7610">471.  2017-04-27 18:59:46 +0000     4860 bytes  test/commons/dom/is-offscreen.js</tspan>
+<tspan x="10" y="7626">472.  2017-04-27 18:59:46 +0000    11534 bytes  test/commons/dom/is-visible.js</tspan>
+<tspan x="10" y="7642">473.  2017-04-27 18:59:46 +0000     3748 bytes  test/commons/dom/is-visual-content.js</tspan>
+<tspan x="10" y="7658">474.  2017-04-27 18:59:46 +0000     2283 bytes  test/commons/dom/visually-contains.js</tspan>
+<tspan x="10" y="7674">475.  2017-04-27 18:59:46 +0000     2772 bytes  test/commons/dom/visually-overlaps.js</tspan>
+<tspan x="10" y="7690">476.  2017-04-27 18:59:46 +0000     3649 bytes  test/commons/index.html</tspan>
+<tspan x="10" y="7706">477.  2017-04-27 18:59:46 +0000      136 bytes  test/commons/index.js</tspan>
+<tspan x="10" y="7722">478.  2017-04-27 18:59:46 +0000     2172 bytes  test/commons/table/get-cell-position.js</tspan>
+<tspan x="10" y="7738">479.  2017-04-27 18:59:46 +0000     3253 bytes  test/commons/table/get-headers.js</tspan>
+<tspan x="10" y="7754">480.  2017-04-27 18:59:46 +0000     6153 bytes  test/commons/table/get-scope.js</tspan>
+<tspan x="10" y="7770">481.  2017-04-27 18:59:46 +0000     1217 bytes  test/commons/table/is-column-header.js</tspan>
+<tspan x="10" y="7786">482.  2017-04-27 18:59:46 +0000      886 bytes  test/commons/table/is-data-cell.js</tspan>
+<tspan x="10" y="7802">483.  2017-04-27 18:59:46 +0000    13096 bytes  test/commons/table/is-data-table.js</tspan>
+<tspan x="10" y="7818">484.  2017-04-27 18:59:46 +0000     2160 bytes  test/commons/table/is-header.js</tspan>
+<tspan x="10" y="7834">485.  2017-04-27 18:59:46 +0000     1175 bytes  test/commons/table/is-row-header.js</tspan>
+<tspan x="10" y="7850">486.  2017-04-27 18:59:46 +0000     2183 bytes  test/commons/table/to-grid.js</tspan>
+<tspan x="10" y="7866">487.  2017-04-27 18:59:46 +0000     3132 bytes  test/commons/table/traverse.js</tspan>
+<tspan x="10" y="7882">488.  2017-04-27 18:59:46 +0000    32850 bytes  test/commons/text/accessible-text.js</tspan>
+<tspan x="10" y="7898">489.  2017-04-27 18:59:46 +0000     4789 bytes  test/commons/text/label.js</tspan>
+<tspan x="10" y="7914">490.  2017-04-27 18:59:46 +0000      451 bytes  test/commons/text/sanitize.js</tspan>
+<tspan x="10" y="7930">491.  2017-04-27 18:59:46 +0000     3987 bytes  test/commons/text/visible.js</tspan>
+<tspan x="10" y="7946">492.  2017-04-27 18:59:46 +0000      494 bytes  test/commons/utils/index.js</tspan>
+<tspan x="10" y="7962">493.  2017-04-27 18:59:46 +0000      586 bytes  test/commons/utils/to-array.js</tspan>
+<tspan x="10" y="7978">494.  2017-04-27 18:59:46 +0000      540 bytes  test/commons/utils/token-list.js</tspan>
+<tspan x="10" y="7994">495.  2017-04-27 18:59:46 +0000    16848 bytes  test/core/base/audit.js</tspan>
+<tspan x="10" y="8010">496.  2017-04-27 18:59:46 +0000      684 bytes  test/core/base/check-result.js</tspan>
+<tspan x="10" y="8026">497.  2017-04-27 18:59:46 +0000     8236 bytes  test/core/base/check.js</tspan>
+<tspan x="10" y="8042">498.  2017-04-27 18:59:46 +0000    11160 bytes  test/core/base/context.js</tspan>
+<tspan x="10" y="8058">499.  2017-04-27 18:59:46 +0000      434 bytes  test/core/base/rule-result.js</tspan>
+<tspan x="10" y="8074">500.  2017-04-27 18:59:46 +0000    20020 bytes  test/core/base/rule.js</tspan>
+<tspan x="10" y="8090">501.  2017-04-27 18:59:46 +0000      831 bytes  test/core/constants.js</tspan>
+<tspan x="10" y="8106">502.  2017-04-27 18:59:46 +0000      236 bytes  test/core/export.js</tspan>
+<tspan x="10" y="8122">503.  2017-04-27 18:59:46 +0000     7870 bytes  test/core/index.html</tspan>
+<tspan x="10" y="8138">504.  2017-04-27 18:59:46 +0000      244 bytes  test/core/index.js</tspan>
+<tspan x="10" y="8154">505.  2017-04-27 18:59:46 +0000      611 bytes  test/core/log.js</tspan>
+<tspan x="10" y="8170">506.  2017-04-27 18:59:46 +0000     1856 bytes  test/core/public/a11y-check.js</tspan>
+<tspan x="10" y="8186">507.  2017-04-27 18:59:46 +0000     1963 bytes  test/core/public/cleanup-plugins.js</tspan>
+<tspan x="10" y="8202">508.  2017-04-27 18:59:46 +0000     4420 bytes  test/core/public/configure.js</tspan>
+<tspan x="10" y="8218">509.  2017-04-27 18:59:46 +0000     3599 bytes  test/core/public/get-rules.js</tspan>
+<tspan x="10" y="8234">510.  2017-04-27 18:59:46 +0000     4913 bytes  test/core/public/load.js</tspan>
+<tspan x="10" y="8250">511.  2017-04-27 18:59:46 +0000     4784 bytes  test/core/public/plugins.js</tspan>
+<tspan x="10" y="8266">512.  2017-04-27 18:59:46 +0000      384 bytes  test/core/public/reporter.js</tspan>
+<tspan x="10" y="8282">513.  2017-04-27 18:59:46 +0000     1626 bytes  test/core/public/reset.js</tspan>
+<tspan x="10" y="8298">514.  2017-04-27 18:59:46 +0000    14853 bytes  test/core/public/run-rules.js</tspan>
+<tspan x="10" y="8314">515.  2017-04-27 18:59:46 +0000     8753 bytes  test/core/public/run.js</tspan>
+<tspan x="10" y="8330">516.  2017-04-27 18:59:46 +0000     2138 bytes  test/core/reporters/helpers/failure-summary.js</tspan>
+<tspan x="10" y="8346">517.  2017-04-27 18:59:46 +0000     5803 bytes  test/core/reporters/na.js</tspan>
+<tspan x="10" y="8362">518.  2017-04-27 18:59:46 +0000     4630 bytes  test/core/reporters/no-passes.js</tspan>
+<tspan x="10" y="8378">519.  2017-04-27 18:59:46 +0000      364 bytes  test/core/reporters/raw.js</tspan>
+<tspan x="10" y="8394">520.  2017-04-27 18:59:46 +0000     6623 bytes  test/core/reporters/v1.js</tspan>
+<tspan x="10" y="8410">521.  2017-04-27 18:59:46 +0000     5280 bytes  test/core/reporters/v2.js</tspan>
+<tspan x="10" y="8426">522.  2017-04-27 18:59:46 +0000     1362 bytes  test/core/utils/aggregate.js</tspan>
+<tspan x="10" y="8442">523.  2017-04-27 18:59:46 +0000     4427 bytes  test/core/utils/aggregateChecks.js</tspan>
+<tspan x="10" y="8458">524.  2017-04-27 18:59:46 +0000     4444 bytes  test/core/utils/aggregateResult.js</tspan>
+<tspan x="10" y="8474">525.  2017-04-27 18:59:46 +0000     3615 bytes  test/core/utils/aggregateRule.js</tspan>
+<tspan x="10" y="8490">526.  2017-04-27 18:59:46 +0000     2972 bytes  test/core/utils/are-styles-set.js</tspan>
+<tspan x="10" y="8506">527.  2017-04-27 18:59:46 +0000     4091 bytes  test/core/utils/check-helper.js</tspan>
+<tspan x="10" y="8522">528.  2017-04-27 18:59:46 +0000     1723 bytes  test/core/utils/clone.js</tspan>
+<tspan x="10" y="8538">529.  2017-04-27 18:59:46 +0000     2340 bytes  test/core/utils/collect-results-from-frames.js</tspan>
+<tspan x="10" y="8554">530.  2017-04-27 18:59:46 +0000     1502 bytes  test/core/utils/contains.js</tspan>
+<tspan x="10" y="8570">531.  2017-04-27 18:59:46 +0000     4067 bytes  test/core/utils/dq-element.js</tspan>
+<tspan x="10" y="8586">532.  2017-04-27 18:59:46 +0000     1231 bytes  test/core/utils/element-matches.js</tspan>
+<tspan x="10" y="8602">533.  2017-04-27 18:59:46 +0000     2900 bytes  test/core/utils/escape-selector.js</tspan>
+<tspan x="10" y="8618">534.  2017-04-27 18:59:46 +0000     1072 bytes  test/core/utils/extend-meta-data.js</tspan>
+<tspan x="10" y="8634">535.  2017-04-27 18:59:46 +0000     1121 bytes  test/core/utils/finalize-result.js</tspan>
+<tspan x="10" y="8650">536.  2017-04-27 18:59:46 +0000      719 bytes  test/core/utils/find-by.js</tspan>
+<tspan x="10" y="8666">537.  2017-04-27 18:59:46 +0000     1350 bytes  test/core/utils/get-all-checks.js</tspan>
+<tspan x="10" y="8682">538.  2017-04-27 18:59:46 +0000     1640 bytes  test/core/utils/get-check-option.js</tspan>
+<tspan x="10" y="8698">539.  2017-04-27 18:59:46 +0000     6032 bytes  test/core/utils/get-selector.js</tspan>
+<tspan x="10" y="8714">540.  2017-04-27 18:59:46 +0000     2508 bytes  test/core/utils/get-xpath.js</tspan>
+<tspan x="10" y="8730">541.  2017-04-27 18:59:46 +0000      231 bytes  test/core/utils/index.js</tspan>
+<tspan x="10" y="8746">542.  2017-04-27 18:59:46 +0000     1654 bytes  test/core/utils/is-hidden.js</tspan>
+<tspan x="10" y="8762">543.  2017-04-27 18:59:46 +0000      304 bytes  test/core/utils/merge-results.js</tspan>
+<tspan x="10" y="8778">544.  2017-04-27 18:59:46 +0000     1193 bytes  test/core/utils/node-sorter.js</tspan>
+<tspan x="10" y="8794">545.  2017-04-27 18:59:46 +0000     5514 bytes  test/core/utils/pollyfills.elements-from-point.j\</tspan>
+<tspan x="10" y="8810">s</tspan>
+<tspan x="10" y="8826">546.  2017-04-27 18:59:46 +0000     4413 bytes  test/core/utils/publish-metadata.js</tspan>
+<tspan x="10" y="8842">547.  2017-04-27 18:59:46 +0000     5417 bytes  test/core/utils/queue.js</tspan>
+<tspan x="10" y="8858">548.  2017-04-27 18:59:46 +0000    11940 bytes  test/core/utils/respondable.js</tspan>
+<tspan x="10" y="8874">549.  2017-04-27 18:59:46 +0000     7322 bytes  test/core/utils/rule-should-run.js</tspan>
+<tspan x="10" y="8890">550.  2017-04-27 18:59:46 +0000     3137 bytes  test/core/utils/select.js</tspan>
+<tspan x="10" y="8906">551.  2017-04-27 18:59:46 +0000     2720 bytes  test/core/utils/send-command-to-frame.js</tspan>
+<tspan x="10" y="8922">552.  2017-04-27 18:59:46 +0000      575 bytes  test/core/utils/to-array.js</tspan>
+<tspan x="10" y="8938">553.  2017-04-27 18:59:46 +0000      688 bytes  test/integration/adapter.js</tspan>
+<tspan x="10" y="8954">554.  2017-04-27 18:59:46 +0000      727 bytes  test/integration/full/bypass/aria-header.html</tspan>
+<tspan x="10" y="8970">555.  2017-04-27 18:59:46 +0000      717 bytes  test/integration/full/bypass/fail.html</tspan>
+<tspan x="10" y="8986">556.  2017-04-27 18:59:46 +0000      743 bytes  test/integration/full/bypass/fail.js</tspan>
+<tspan x="10" y="9002">557.  2017-04-27 18:59:46 +0000      770 bytes  test/integration/full/bypass/header1.html</tspan>
+<tspan x="10" y="9018">558.  2017-04-27 18:59:46 +0000      770 bytes  test/integration/full/bypass/header2.html</tspan>
+<tspan x="10" y="9034">559.  2017-04-27 18:59:46 +0000      653 bytes  test/integration/full/bypass/pass-tests.js</tspan>
+<tspan x="10" y="9050">560.  2017-04-27 18:59:46 +0000      784 bytes  test/integration/full/bypass/region.html</tspan>
+<tspan x="10" y="9066">561.  2017-04-27 18:59:46 +0000      763 bytes  test/integration/full/bypass/skip-link.html</tspan>
+<tspan x="10" y="9082">562.  2017-04-27 18:59:46 +0000      669 bytes  test/integration/full/context/context.html</tspan>
+<tspan x="10" y="9098">563.  2017-04-27 18:59:46 +0000     9892 bytes  test/integration/full/context/context.js</tspan>
+<tspan x="10" y="9114">564.  2017-04-27 18:59:46 +0000      235 bytes  test/integration/full/context/frames/level1.html</tspan>
+<tspan x="10" y="9130">565.  2017-04-27 18:59:46 +0000      135 bytes  test/integration/full/context/frames/level2-a.ht\</tspan>
+<tspan x="10" y="9146">ml</tspan>
+<tspan x="10" y="9162">566.  2017-04-27 18:59:46 +0000      131 bytes  test/integration/full/context/frames/level2-b.ht\</tspan>
+<tspan x="10" y="9178">ml</tspan>
+<tspan x="10" y="9194">567.  2017-04-27 18:59:46 +0000     1880 bytes  test/integration/full/contrast/sticky-header.htm\</tspan>
+<tspan x="10" y="9210">l</tspan>
+<tspan x="10" y="9226">568.  2017-04-27 18:59:46 +0000      368 bytes  test/integration/full/contrast/sticky-header.js</tspan>
+<tspan x="10" y="9242">569.  2017-04-27 18:59:46 +0000      691 bytes  test/integration/full/definition-list/dl-role.ht\</tspan>
+<tspan x="10" y="9258">ml</tspan>
+<tspan x="10" y="9274">570.  2017-04-27 18:59:46 +0000      358 bytes  test/integration/full/definition-list/dl-role.js</tspan>
+<tspan x="10" y="9290">571.  2017-04-27 18:59:46 +0000      746 bytes  test/integration/full/definition-list/dlitem-rol\</tspan>
+<tspan x="10" y="9306">e.html</tspan>
+<tspan x="10" y="9322">572.  2017-04-27 18:59:46 +0000      340 bytes  test/integration/full/definition-list/dlitem-rol\</tspan>
+<tspan x="10" y="9338">e.js</tspan>
+<tspan x="10" y="9354">573.  2017-04-27 18:59:46 +0000      609 bytes  test/integration/full/document-title/document-ti\</tspan>
+<tspan x="10" y="9370">tle-fail.html</tspan>
+<tspan x="10" y="9386">574.  2017-04-27 18:59:46 +0000      847 bytes  test/integration/full/document-title/document-ti\</tspan>
+<tspan x="10" y="9402">tle-fail.js</tspan>
+<tspan x="10" y="9418">575.  2017-04-27 18:59:46 +0000      645 bytes  test/integration/full/document-title/document-ti\</tspan>
+<tspan x="10" y="9434">tle-pass.html</tspan>
+<tspan x="10" y="9450">576.  2017-04-27 18:59:46 +0000      888 bytes  test/integration/full/document-title/document-ti\</tspan>
+<tspan x="10" y="9466">tle-pass.js</tspan>
+<tspan x="10" y="9482">577.  2017-04-27 18:59:46 +0000      233 bytes  test/integration/full/document-title/frames/leve\</tspan>
+<tspan x="10" y="9498">l1.html</tspan>
+<tspan x="10" y="9514">578.  2017-04-27 18:59:46 +0000      161 bytes  test/integration/full/document-title/frames/leve\</tspan>
+<tspan x="10" y="9530">l2-a.html</tspan>
+<tspan x="10" y="9546">579.  2017-04-27 18:59:46 +0000      133 bytes  test/integration/full/document-title/frames/leve\</tspan>
+<tspan x="10" y="9562">l2.html</tspan>
+<tspan x="10" y="9578">580.  2017-04-27 18:59:46 +0000      262 bytes  test/integration/full/html-has-lang/frames/level\</tspan>
+<tspan x="10" y="9594">1.html</tspan>
+<tspan x="10" y="9610">581.  2017-04-27 18:59:46 +0000      174 bytes  test/integration/full/html-has-lang/frames/level\</tspan>
+<tspan x="10" y="9626">2-a.html</tspan>
+<tspan x="10" y="9642">582.  2017-04-27 18:59:46 +0000      170 bytes  test/integration/full/html-has-lang/frames/level\</tspan>
+<tspan x="10" y="9658">2.html</tspan>
+<tspan x="10" y="9674">583.  2017-04-27 18:59:46 +0000      643 bytes  test/integration/full/html-has-lang/html-has-lan\</tspan>
+<tspan x="10" y="9690">g.html</tspan>
+<tspan x="10" y="9706">584.  2017-04-27 18:59:46 +0000     1226 bytes  test/integration/full/html-has-lang/html-has-lan\</tspan>
+<tspan x="10" y="9722">g.js</tspan>
+<tspan x="10" y="9738">585.  2017-04-27 18:59:46 +0000      275 bytes  test/integration/full/html-lang-valid/frames/lev\</tspan>
+<tspan x="10" y="9754">el1.html</tspan>
+<tspan x="10" y="9770">586.  2017-04-27 18:59:46 +0000      171 bytes  test/integration/full/html-lang-valid/frames/lev\</tspan>
+<tspan x="10" y="9786">el2-a.html</tspan>
+<tspan x="10" y="9802">587.  2017-04-27 18:59:46 +0000      177 bytes  test/integration/full/html-lang-valid/frames/lev\</tspan>
+<tspan x="10" y="9818">el2.html</tspan>
+<tspan x="10" y="9834">588.  2017-04-27 18:59:46 +0000      635 bytes  test/integration/full/html-lang-valid/html-lang-\</tspan>
+<tspan x="10" y="9850">valid.html</tspan>
+<tspan x="10" y="9866">589.  2017-04-27 18:59:46 +0000     1115 bytes  test/integration/full/html-lang-valid/html-lang-\</tspan>
+<tspan x="10" y="9882">valid.js</tspan>
+<tspan x="10" y="9898">590.  2017-04-27 18:59:46 +0000     1171 bytes  test/integration/full/incomplete/color-contrast.\</tspan>
+<tspan x="10" y="9914">html</tspan>
+<tspan x="10" y="9930">591.  2017-04-27 18:59:46 +0000     1289 bytes  test/integration/full/incomplete/color-contrast.\</tspan>
+<tspan x="10" y="9946">js</tspan>
+<tspan x="10" y="9962">592.  2017-04-27 18:59:46 +0000      891 bytes  test/integration/full/incomplete/th-has-data-cel\</tspan>
+<tspan x="10" y="9978">ls.html</tspan>
+<tspan x="10" y="9994">593.  2017-04-27 18:59:46 +0000     1014 bytes  test/integration/full/incomplete/th-has-data-cel\</tspan>
+<tspan x="10" y="10010">ls.js</tspan>
+<tspan x="10" y="10026">594.  2017-04-27 18:59:46 +0000      858 bytes  test/integration/full/jquery/a11ycheck-include-e\</tspan>
+<tspan x="10" y="10042">xclude.html</tspan>
+<tspan x="10" y="10058">595.  2017-04-27 18:59:46 +0000      810 bytes  test/integration/full/jquery/a11ycheck-include-e\</tspan>
+<tspan x="10" y="10074">xclude.js</tspan>
+<tspan x="10" y="10090">596.  2017-04-27 18:59:46 +0000      856 bytes  test/integration/full/jquery/a11ycheck-object.ht\</tspan>
+<tspan x="10" y="10106">ml</tspan>
+<tspan x="10" y="10122">597.  2017-04-27 18:59:46 +0000      428 bytes  test/integration/full/jquery/a11ycheck-object.js</tspan>
+<tspan x="10" y="10138">598.  2017-04-27 18:59:46 +0000      701 bytes  test/integration/full/list/li-role.html</tspan>
+<tspan x="10" y="10154">599.  2017-04-27 18:59:46 +0000      465 bytes  test/integration/full/list/li-role.js</tspan>
+<tspan x="10" y="10170">600.  2017-04-27 18:59:46 +0000      785 bytes  test/integration/full/list/list-role.html</tspan>
+<tspan x="10" y="10186">601.  2017-04-27 18:59:46 +0000      372 bytes  test/integration/full/list/list-role.js</tspan>
+<tspan x="10" y="10202">602.  2017-04-27 18:59:46 +0000      408 bytes  test/integration/full/options/frames/frame.html</tspan>
+<tspan x="10" y="10218">603.  2017-04-27 18:59:46 +0000      944 bytes  test/integration/full/options/options.html</tspan>
+<tspan x="10" y="10234">604.  2017-04-27 18:59:46 +0000     5911 bytes  test/integration/full/options/options.js</tspan>
+<tspan x="10" y="10250">605.  2017-04-27 18:59:46 +0000      743 bytes  test/integration/full/region/region-fail.html</tspan>
+<tspan x="10" y="10266">606.  2017-04-27 18:59:46 +0000      624 bytes  test/integration/full/region/region-fail.js</tspan>
+<tspan x="10" y="10282">607.  2017-04-27 18:59:46 +0000      777 bytes  test/integration/full/region/region-pass.html</tspan>
+<tspan x="10" y="10298">608.  2017-04-27 18:59:46 +0000      620 bytes  test/integration/full/region/region-pass.js</tspan>
+<tspan x="10" y="10314">609.  2017-04-27 18:59:46 +0000      639 bytes  test/integration/full/skip-link/skip-link-fail.h\</tspan>
+<tspan x="10" y="10330">tml</tspan>
+<tspan x="10" y="10346">610.  2017-04-27 18:59:46 +0000      636 bytes  test/integration/full/skip-link/skip-link-fail.j\</tspan>
+<tspan x="10" y="10362">s</tspan>
+<tspan x="10" y="10378">611.  2017-04-27 18:59:46 +0000      672 bytes  test/integration/full/skip-link/skip-link-pass.h\</tspan>
+<tspan x="10" y="10394">tml</tspan>
+<tspan x="10" y="10410">612.  2017-04-27 18:59:46 +0000      632 bytes  test/integration/full/skip-link/skip-link-pass.j\</tspan>
+<tspan x="10" y="10426">s</tspan>
+<tspan x="10" y="10442">613.  2017-04-27 18:59:46 +0000      186 bytes  test/integration/full/umd/mock-define.js</tspan>
+<tspan x="10" y="10458">614.  2017-04-27 18:59:46 +0000      113 bytes  test/integration/full/umd/mock-module-exports.js</tspan>
+<tspan x="10" y="10474">615.  2017-04-27 18:59:46 +0000      566 bytes  test/integration/full/umd/umd-define.html</tspan>
+<tspan x="10" y="10490">616.  2017-04-27 18:59:46 +0000      277 bytes  test/integration/full/umd/umd-define.js</tspan>
+<tspan x="10" y="10506">617.  2017-04-27 18:59:46 +0000      590 bytes  test/integration/full/umd/umd-module-exports.htm\</tspan>
+<tspan x="10" y="10522">l</tspan>
+<tspan x="10" y="10538">618.  2017-04-27 18:59:46 +0000      186 bytes  test/integration/full/umd/umd-module-exports.js</tspan>
+<tspan x="10" y="10554">619.  2017-04-27 18:59:46 +0000      531 bytes  test/integration/full/umd/umd-window.html</tspan>
+<tspan x="10" y="10570">620.  2017-04-27 18:59:46 +0000      159 bytes  test/integration/full/umd/umd-window.js</tspan>
+<tspan x="10" y="10586">621.  2017-04-27 18:59:46 +0000      827 bytes  test/integration/no-ui-reporter.js</tspan>
+<tspan x="10" y="10602">622.  2017-04-27 18:59:46 +0000      325 bytes  test/integration/rules/accesskeys/accesskeys.htm\</tspan>
+<tspan x="10" y="10618">l</tspan>
+<tspan x="10" y="10634">623.  2017-04-27 18:59:46 +0000      164 bytes  test/integration/rules/accesskeys/accesskeys.jso\</tspan>
+<tspan x="10" y="10650">n</tspan>
+<tspan x="10" y="10666">624.  2017-04-27 18:59:46 +0000      227 bytes  test/integration/rules/accesskeys/frame.html</tspan>
+<tspan x="10" y="10682">625.  2017-04-27 18:59:46 +0000      524 bytes  test/integration/rules/area-alt/area-alt.html</tspan>
+<tspan x="10" y="10698">626.  2017-04-27 18:59:46 +0000      193 bytes  test/integration/rules/area-alt/area-alt.json</tspan>
+<tspan x="10" y="10714">627.  2017-04-27 18:59:46 +0000      122 bytes  test/integration/rules/aria-allowed-attr/failure\</tspan>
+<tspan x="10" y="10730">s.html</tspan>
+<tspan x="10" y="10746">628.  2017-04-27 18:59:46 +0000      129 bytes  test/integration/rules/aria-allowed-attr/failure\</tspan>
+<tspan x="10" y="10762">s.json</tspan>
+<tspan x="10" y="10778">629.  2017-04-27 18:59:46 +0000    27808 bytes  test/integration/rules/aria-allowed-attr/passes.\</tspan>
+<tspan x="10" y="10794">html</tspan>
+<tspan x="10" y="10810">630.  2017-04-27 18:59:46 +0000      967 bytes  test/integration/rules/aria-allowed-attr/passes.\</tspan>
+<tspan x="10" y="10826">json</tspan>
+<tspan x="10" y="10842">631.  2017-04-27 18:59:46 +0000     1194 bytes  test/integration/rules/aria-required-attr/requir\</tspan>
+<tspan x="10" y="10858">ed-attr.html</tspan>
+<tspan x="10" y="10874">632.  2017-04-27 18:59:46 +0000      384 bytes  test/integration/rules/aria-required-attr/requir\</tspan>
+<tspan x="10" y="10890">ed-attr.json</tspan>
+<tspan x="10" y="10906">633.  2017-04-27 18:59:46 +0000      488 bytes  test/integration/rules/aria-required-children/ar\</tspan>
+<tspan x="10" y="10922">ia-required-children.html</tspan>
+<tspan x="10" y="10938">634.  2017-04-27 18:59:46 +0000      275 bytes  test/integration/rules/aria-required-children/ar\</tspan>
+<tspan x="10" y="10954">ia-required-children.json</tspan>
+<tspan x="10" y="10970">635.  2017-04-27 18:59:46 +0000      492 bytes  test/integration/rules/aria-required-parent/aria\</tspan>
+<tspan x="10" y="10986">-required-parent.html</tspan>
+<tspan x="10" y="11002">636.  2017-04-27 18:59:46 +0000      271 bytes  test/integration/rules/aria-required-parent/aria\</tspan>
+<tspan x="10" y="11018">-required-parent.json</tspan>
+<tspan x="10" y="11034">637.  2017-04-27 18:59:46 +0000     3474 bytes  test/integration/rules/aria-roles/aria-roles.htm\</tspan>
+<tspan x="10" y="11050">l</tspan>
+<tspan x="10" y="11066">638.  2017-04-27 18:59:46 +0000     1143 bytes  test/integration/rules/aria-roles/aria-roles.jso\</tspan>
+<tspan x="10" y="11082">n</tspan>
+<tspan x="10" y="11098">639.  2017-04-27 18:59:46 +0000     9882 bytes  test/integration/rules/aria-valid-attr-value/ari\</tspan>
+<tspan x="10" y="11114">a-valid-attr-value.html</tspan>
+<tspan x="10" y="11130">640.  2017-04-27 18:59:46 +0000     2927 bytes  test/integration/rules/aria-valid-attr-value/ari\</tspan>
+<tspan x="10" y="11146">a-valid-attr-value.json</tspan>
+<tspan x="10" y="11162">641.  2017-04-27 18:59:46 +0000     2146 bytes  test/integration/rules/aria-valid-attr/aria-vali\</tspan>
+<tspan x="10" y="11178">d-attr.html</tspan>
+<tspan x="10" y="11194">642.  2017-04-27 18:59:46 +0000      705 bytes  test/integration/rules/aria-valid-attr/aria-vali\</tspan>
+<tspan x="10" y="11210">d-attr.json</tspan>
+<tspan x="10" y="11226">643.  2017-04-27 18:59:46 +0000       80 bytes  test/integration/rules/audio-caption/audio-capti\</tspan>
+<tspan x="10" y="11242">on.html</tspan>
+<tspan x="10" y="11258">644.  2017-04-27 18:59:46 +0000      123 bytes  test/integration/rules/audio-caption/audio-capti\</tspan>
+<tspan x="10" y="11274">on.json</tspan>
+<tspan x="10" y="11290">645.  2017-04-27 18:59:46 +0000      156 bytes  test/integration/rules/blink/blink.html</tspan>
+<tspan x="10" y="11306">646.  2017-04-27 18:59:46 +0000      117 bytes  test/integration/rules/blink/blink.json</tspan>
+<tspan x="10" y="11322">647.  2017-04-27 18:59:46 +0000      495 bytes  test/integration/rules/button-name/button-name.h\</tspan>
+<tspan x="10" y="11338">tml</tspan>
+<tspan x="10" y="11354">648.  2017-04-27 18:59:46 +0000      203 bytes  test/integration/rules/button-name/button-name.j\</tspan>
+<tspan x="10" y="11370">son</tspan>
+<tspan x="10" y="11386">649.  2017-04-27 18:59:46 +0000     1225 bytes  test/integration/rules/checkboxgroup/checkboxgro\</tspan>
+<tspan x="10" y="11402">up.html</tspan>
+<tspan x="10" y="11418">650.  2017-04-27 18:59:46 +0000      266 bytes  test/integration/rules/checkboxgroup/checkboxgro\</tspan>
+<tspan x="10" y="11434">up.json</tspan>
+<tspan x="10" y="11450">651.  2017-04-27 18:59:46 +0000     4230 bytes  test/integration/rules/color-contrast/color-cont\</tspan>
+<tspan x="10" y="11466">rast.html</tspan>
+<tspan x="10" y="11482">652.  2017-04-27 18:59:46 +0000      543 bytes  test/integration/rules/color-contrast/color-cont\</tspan>
+<tspan x="10" y="11498">rast.json</tspan>
+<tspan x="10" y="11514">653.  2017-04-27 18:59:46 +0000      664 bytes  test/integration/rules/definition-list/definitio\</tspan>
+<tspan x="10" y="11530">n-list.html</tspan>
+<tspan x="10" y="11546">654.  2017-04-27 18:59:46 +0000      244 bytes  test/integration/rules/definition-list/definitio\</tspan>
+<tspan x="10" y="11562">n-list.json</tspan>
+<tspan x="10" y="11578">655.  2017-04-27 18:59:46 +0000      216 bytes  test/integration/rules/dlitem/dlitem.html</tspan>
+<tspan x="10" y="11594">656.  2017-04-27 18:59:46 +0000      159 bytes  test/integration/rules/dlitem/dlitem.json</tspan>
+<tspan x="10" y="11610">657.  2017-04-27 18:59:46 +0000      212 bytes  test/integration/rules/duplicate-id/duplicate-id\</tspan>
+<tspan x="10" y="11626">.html</tspan>
+<tspan x="10" y="11642">658.  2017-04-27 18:59:46 +0000      155 bytes  test/integration/rules/duplicate-id/duplicate-id\</tspan>
+<tspan x="10" y="11658">.json</tspan>
+<tspan x="10" y="11674">659.  2017-04-27 18:59:46 +0000      569 bytes  test/integration/rules/empty-heading/empty-headi\</tspan>
+<tspan x="10" y="11690">ng.html</tspan>
+<tspan x="10" y="11706">660.  2017-04-27 18:59:46 +0000      271 bytes  test/integration/rules/empty-heading/empty-headi\</tspan>
+<tspan x="10" y="11722">ng.json</tspan>
+<tspan x="10" y="11738">661.  2017-04-27 18:59:46 +0000      372 bytes  test/integration/rules/frame-title-unique/frame-\</tspan>
+<tspan x="10" y="11754">title-unique.html</tspan>
+<tspan x="10" y="11770">662.  2017-04-27 18:59:46 +0000      191 bytes  test/integration/rules/frame-title-unique/frame-\</tspan>
+<tspan x="10" y="11786">title-unique.json</tspan>
+<tspan x="10" y="11802">663.  2017-04-27 18:59:46 +0000      264 bytes  test/integration/rules/frame-title-unique/frames\</tspan>
+<tspan x="10" y="11818">/level1.html</tspan>
+<tspan x="10" y="11834">664.  2017-04-27 18:59:46 +0000      154 bytes  test/integration/rules/frame-title-unique/frames\</tspan>
+<tspan x="10" y="11850">/level1a.html</tspan>
+<tspan x="10" y="11866">665.  2017-04-27 18:59:46 +0000      143 bytes  test/integration/rules/frame-title-unique/frames\</tspan>
+<tspan x="10" y="11882">/level2-a.html</tspan>
+<tspan x="10" y="11898">666.  2017-04-27 18:59:46 +0000      117 bytes  test/integration/rules/frame-title-unique/frames\</tspan>
+<tspan x="10" y="11914">/level2.html</tspan>
+<tspan x="10" y="11930">667.  2017-04-27 18:59:46 +0000      712 bytes  test/integration/rules/frame-title/frame-title.h\</tspan>
+<tspan x="10" y="11946">tml</tspan>
+<tspan x="10" y="11962">668.  2017-04-27 18:59:46 +0000      284 bytes  test/integration/rules/frame-title/frame-title.j\</tspan>
+<tspan x="10" y="11978">son</tspan>
+<tspan x="10" y="11994">669.  2017-04-27 18:59:46 +0000      265 bytes  test/integration/rules/frame-title/frames/level1\</tspan>
+<tspan x="10" y="12010">.html</tspan>
+<tspan x="10" y="12026">670.  2017-04-27 18:59:46 +0000      154 bytes  test/integration/rules/frame-title/frames/level1\</tspan>
+<tspan x="10" y="12042">a.html</tspan>
+<tspan x="10" y="12058">671.  2017-04-27 18:59:46 +0000      143 bytes  test/integration/rules/frame-title/frames/level2\</tspan>
+<tspan x="10" y="12074">-a.html</tspan>
+<tspan x="10" y="12090">672.  2017-04-27 18:59:46 +0000      117 bytes  test/integration/rules/frame-title/frames/level2\</tspan>
+<tspan x="10" y="12106">.html</tspan>
+<tspan x="10" y="12122">673.  2017-04-27 18:59:46 +0000      211 bytes  test/integration/rules/heading-order/heading-ord\</tspan>
+<tspan x="10" y="12138">er.html</tspan>
+<tspan x="10" y="12154">674.  2017-04-27 18:59:46 +0000      217 bytes  test/integration/rules/heading-order/heading-ord\</tspan>
+<tspan x="10" y="12170">er.json</tspan>
+<tspan x="10" y="12186">675.  2017-04-27 18:59:46 +0000      117 bytes  test/integration/rules/href-no-hash/href-no-hash\</tspan>
+<tspan x="10" y="12202">.html</tspan>
+<tspan x="10" y="12218">676.  2017-04-27 18:59:46 +0000      132 bytes  test/integration/rules/href-no-hash/href-no-hash\</tspan>
+<tspan x="10" y="12234">.json</tspan>
+<tspan x="10" y="12250">677.  2017-04-27 18:59:46 +0000      842 bytes  test/integration/rules/image-alt/image-alt.html</tspan>
+<tspan x="10" y="12266">678.  2017-04-27 18:59:46 +0000      301 bytes  test/integration/rules/image-alt/image-alt.json</tspan>
+<tspan x="10" y="12282">679.  2017-04-27 18:59:46 +0000      686 bytes  test/integration/rules/image-redundant-alt/image\</tspan>
+<tspan x="10" y="12298">-redundant-alt.html</tspan>
+<tspan x="10" y="12314">680.  2017-04-27 18:59:46 +0000      228 bytes  test/integration/rules/image-redundant-alt/image\</tspan>
+<tspan x="10" y="12330">-redundant-alt.json</tspan>
+<tspan x="10" y="12346">681.  2017-04-27 18:59:46 +0000     1525 bytes  test/integration/rules/index.html</tspan>
+<tspan x="10" y="12362">682.  2017-04-27 18:59:46 +0000      776 bytes  test/integration/rules/input-button-name/input-b\</tspan>
+<tspan x="10" y="12378">utton-name.html</tspan>
+<tspan x="10" y="12394">683.  2017-04-27 18:59:46 +0000      301 bytes  test/integration/rules/input-button-name/input-b\</tspan>
+<tspan x="10" y="12410">utton-name.json</tspan>
+<tspan x="10" y="12426">684.  2017-04-27 18:59:46 +0000      650 bytes  test/integration/rules/input-image-alt/input-ima\</tspan>
+<tspan x="10" y="12442">ge-alt.html</tspan>
+<tspan x="10" y="12458">685.  2017-04-27 18:59:46 +0000      236 bytes  test/integration/rules/input-image-alt/input-ima\</tspan>
+<tspan x="10" y="12474">ge-alt.json</tspan>
+<tspan x="10" y="12490">686.  2017-04-27 18:59:46 +0000      838 bytes  test/integration/rules/label-title-only/label-ti\</tspan>
+<tspan x="10" y="12506">tle-only.html</tspan>
+<tspan x="10" y="12522">687.  2017-04-27 18:59:46 +0000      277 bytes  test/integration/rules/label-title-only/label-ti\</tspan>
+<tspan x="10" y="12538">tle-only.json</tspan>
+<tspan x="10" y="12554">688.  2017-04-27 18:59:46 +0000     1609 bytes  test/integration/rules/label/label.html</tspan>
+<tspan x="10" y="12570">689.  2017-04-27 18:59:46 +0000      459 bytes  test/integration/rules/label/label.json</tspan>
+<tspan x="10" y="12586">690.  2017-04-27 18:59:46 +0000      984 bytes  test/integration/rules/link-in-text-block/link-i\</tspan>
+<tspan x="10" y="12602">n-text-block.html</tspan>
+<tspan x="10" y="12618">691.  2017-04-27 18:59:46 +0000      145 bytes  test/integration/rules/link-in-text-block/link-i\</tspan>
+<tspan x="10" y="12634">n-text-block.json</tspan>
+<tspan x="10" y="12650">692.  2017-04-27 18:59:46 +0000      831 bytes  test/integration/rules/link-name/link-name.html</tspan>
+<tspan x="10" y="12666">693.  2017-04-27 18:59:46 +0000      253 bytes  test/integration/rules/link-name/link-name.json</tspan>
+<tspan x="10" y="12682">694.  2017-04-27 18:59:46 +0000      711 bytes  test/integration/rules/list/list.html</tspan>
+<tspan x="10" y="12698">695.  2017-04-27 18:59:46 +0000      275 bytes  test/integration/rules/list/list.json</tspan>
+<tspan x="10" y="12714">696.  2017-04-27 18:59:46 +0000      169 bytes  test/integration/rules/listitem/listitem.html</tspan>
+<tspan x="10" y="12730">697.  2017-04-27 18:59:46 +0000      141 bytes  test/integration/rules/listitem/listitem.json</tspan>
+<tspan x="10" y="12746">698.  2017-04-27 18:59:46 +0000       71 bytes  test/integration/rules/marquee/marquee.html</tspan>
+<tspan x="10" y="12762">699.  2017-04-27 18:59:46 +0000       90 bytes  test/integration/rules/marquee/marquee.json</tspan>
+<tspan x="10" y="12778">700.  2017-04-27 18:59:46 +0000       54 bytes  test/integration/rules/meta-refresh/meta-refresh\</tspan>
+<tspan x="10" y="12794">.html</tspan>
+<tspan x="10" y="12810">701.  2017-04-27 18:59:46 +0000       94 bytes  test/integration/rules/meta-refresh/meta-refresh\</tspan>
+<tspan x="10" y="12826">.json</tspan>
+<tspan x="10" y="12842">702.  2017-04-27 18:59:46 +0000       60 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="12858">viewport-large-fail1.html</tspan>
+<tspan x="10" y="12874">703.  2017-04-27 18:59:46 +0000      113 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="12890">viewport-large-fail1.json</tspan>
+<tspan x="10" y="12906">704.  2017-04-27 18:59:46 +0000       60 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="12922">viewport-large-fail2.html</tspan>
+<tspan x="10" y="12938">705.  2017-04-27 18:59:46 +0000      113 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="12954">viewport-large-fail2.json</tspan>
+<tspan x="10" y="12970">706.  2017-04-27 18:59:46 +0000       61 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="12986">viewport-large-pass1.html</tspan>
+<tspan x="10" y="13002">707.  2017-04-27 18:59:46 +0000      109 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="13018">viewport-large-pass1.json</tspan>
+<tspan x="10" y="13034">708.  2017-04-27 18:59:46 +0000       81 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="13050">viewport-large-pass2.html</tspan>
+<tspan x="10" y="13066">709.  2017-04-27 18:59:46 +0000      109 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="13082">viewport-large-pass2.json</tspan>
+<tspan x="10" y="13098">710.  2017-04-27 18:59:46 +0000       62 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="13114">viewport-large-pass3.html</tspan>
+<tspan x="10" y="13130">711.  2017-04-27 18:59:46 +0000      109 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="13146">viewport-large-pass3.json</tspan>
+<tspan x="10" y="13162">712.  2017-04-27 18:59:46 +0000       62 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="13178">viewport-large-pass4.html</tspan>
+<tspan x="10" y="13194">713.  2017-04-27 18:59:46 +0000      109 bytes  test/integration/rules/meta-viewport-large/meta-\</tspan>
+<tspan x="10" y="13210">viewport-large-pass4.json</tspan>
+<tspan x="10" y="13226">714.  2017-04-27 18:59:46 +0000       90 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13242">rt-fail1.html</tspan>
+<tspan x="10" y="13258">715.  2017-04-27 18:59:46 +0000      101 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13274">rt-fail1.json</tspan>
+<tspan x="10" y="13290">716.  2017-04-27 18:59:46 +0000       62 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13306">rt-fail2.html</tspan>
+<tspan x="10" y="13322">717.  2017-04-27 18:59:46 +0000      101 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13338">rt-fail2.json</tspan>
+<tspan x="10" y="13354">718.  2017-04-27 18:59:46 +0000       60 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13370">rt-pass1.html</tspan>
+<tspan x="10" y="13386">719.  2017-04-27 18:59:46 +0000       97 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13402">rt-pass1.json</tspan>
+<tspan x="10" y="13418">720.  2017-04-27 18:59:46 +0000       81 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13434">rt-pass2.html</tspan>
+<tspan x="10" y="13450">721.  2017-04-27 18:59:46 +0000       97 bytes  test/integration/rules/meta-viewport/meta-viewpo\</tspan>
+<tspan x="10" y="13466">rt-pass2.json</tspan>
+<tspan x="10" y="13482">722.  2017-04-27 18:59:46 +0000      440 bytes  test/integration/rules/object-alt/object-alt.htm\</tspan>
+<tspan x="10" y="13498">l</tspan>
+<tspan x="10" y="13514">723.  2017-04-27 18:59:46 +0000      192 bytes  test/integration/rules/object-alt/object-alt.jso\</tspan>
+<tspan x="10" y="13530">n</tspan>
+<tspan x="10" y="13546">724.  2017-04-27 18:59:46 +0000     1343 bytes  test/integration/rules/p-as-heading/p-as-heading\</tspan>
+<tspan x="10" y="13562">.html</tspan>
+<tspan x="10" y="13578">725.  2017-04-27 18:59:46 +0000      285 bytes  test/integration/rules/p-as-heading/p-as-heading\</tspan>
+<tspan x="10" y="13594">.json</tspan>
+<tspan x="10" y="13610">726.  2017-04-27 18:59:46 +0000     1179 bytes  test/integration/rules/radiogroup/radiogroup.htm\</tspan>
+<tspan x="10" y="13626">l</tspan>
+<tspan x="10" y="13642">727.  2017-04-27 18:59:46 +0000      260 bytes  test/integration/rules/radiogroup/radiogroup.jso\</tspan>
+<tspan x="10" y="13658">n</tspan>
+<tspan x="10" y="13674">728.  2017-04-27 18:59:46 +0000      557 bytes  test/integration/rules/role-button-name/role-but\</tspan>
+<tspan x="10" y="13690">ton-name.html</tspan>
+<tspan x="10" y="13706">729.  2017-04-27 18:59:46 +0000      198 bytes  test/integration/rules/role-button-name/role-but\</tspan>
+<tspan x="10" y="13722">ton-name.json</tspan>
+<tspan x="10" y="13738">730.  2017-04-27 18:59:46 +0000     3062 bytes  test/integration/rules/runner.js</tspan>
+<tspan x="10" y="13754">731.  2017-04-27 18:59:46 +0000      775 bytes  test/integration/rules/runner.tmpl</tspan>
+<tspan x="10" y="13770">732.  2017-04-27 18:59:46 +0000      332 bytes  test/integration/rules/scope-attr-valid/scope-at\</tspan>
+<tspan x="10" y="13786">tr-valid.html</tspan>
+<tspan x="10" y="13802">733.  2017-04-27 18:59:46 +0000      125 bytes  test/integration/rules/scope-attr-valid/scope-at\</tspan>
+<tspan x="10" y="13818">tr-valid.json</tspan>
+<tspan x="10" y="13834">734.  2017-04-27 18:59:46 +0000       85 bytes  test/integration/rules/server-side-image-map/ser\</tspan>
+<tspan x="10" y="13850">ver-side-image-map.html</tspan>
+<tspan x="10" y="13866">735.  2017-04-27 18:59:46 +0000      111 bytes  test/integration/rules/server-side-image-map/ser\</tspan>
+<tspan x="10" y="13882">ver-side-image-map.json</tspan>
+<tspan x="10" y="13898">736.  2017-04-27 18:59:46 +0000      133 bytes  test/integration/rules/tabindex/tabindex.html</tspan>
+<tspan x="10" y="13914">737.  2017-04-27 18:59:46 +0000      128 bytes  test/integration/rules/tabindex/tabindex.json</tspan>
+<tspan x="10" y="13930">738.  2017-04-27 18:59:46 +0000      383 bytes  test/integration/rules/table-duplicate-name/tabl\</tspan>
+<tspan x="10" y="13946">e-duplicate-name.html</tspan>
+<tspan x="10" y="13962">739.  2017-04-27 18:59:46 +0000      102 bytes  test/integration/rules/table-duplicate-name/tabl\</tspan>
+<tspan x="10" y="13978">e-duplicate-name.json</tspan>
+<tspan x="10" y="13994">740.  2017-04-27 18:59:46 +0000      572 bytes  test/integration/rules/table-fake-caption/table-\</tspan>
+<tspan x="10" y="14010">fake-caption.html</tspan>
+<tspan x="10" y="14026">741.  2017-04-27 18:59:46 +0000      112 bytes  test/integration/rules/table-fake-caption/table-\</tspan>
+<tspan x="10" y="14042">fake-caption.json</tspan>
+<tspan x="10" y="14058">742.  2017-04-27 18:59:46 +0000     1725 bytes  test/integration/rules/td-has-header/td-has-head\</tspan>
+<tspan x="10" y="14074">er.html</tspan>
+<tspan x="10" y="14090">743.  2017-04-27 18:59:46 +0000      157 bytes  test/integration/rules/td-has-header/td-has-head\</tspan>
+<tspan x="10" y="14106">er.json</tspan>
+<tspan x="10" y="14122">744.  2017-04-27 18:59:46 +0000     1006 bytes  test/integration/rules/th-has-data-cells/th-has-\</tspan>
+<tspan x="10" y="14138">data-cells.html</tspan>
+<tspan x="10" y="14154">745.  2017-04-27 18:59:46 +0000      253 bytes  test/integration/rules/th-has-data-cells/th-has-\</tspan>
+<tspan x="10" y="14170">data-cells.json</tspan>
+<tspan x="10" y="14186">746.  2017-04-27 18:59:46 +0000      433 bytes  test/integration/rules/valid-lang/valid-lang.htm\</tspan>
+<tspan x="10" y="14202">l</tspan>
+<tspan x="10" y="14218">747.  2017-04-27 18:59:46 +0000      199 bytes  test/integration/rules/valid-lang/valid-lang.jso\</tspan>
+<tspan x="10" y="14234">n</tspan>
+<tspan x="10" y="14250">748.  2017-04-27 18:59:46 +0000      214 bytes  test/integration/rules/video-caption/video-capti\</tspan>
+<tspan x="10" y="14266">on.html</tspan>
+<tspan x="10" y="14282">749.  2017-04-27 18:59:46 +0000      168 bytes  test/integration/rules/video-caption/video-capti\</tspan>
+<tspan x="10" y="14298">on.json</tspan>
+<tspan x="10" y="14314">750.  2017-04-27 18:59:46 +0000      215 bytes  test/integration/rules/video-description/video-d\</tspan>
+<tspan x="10" y="14330">escription.html</tspan>
+<tspan x="10" y="14346">751.  2017-04-27 18:59:46 +0000      176 bytes  test/integration/rules/video-description/video-d\</tspan>
+<tspan x="10" y="14362">escription.json</tspan>
+<tspan x="10" y="14378">752.  2017-04-27 18:59:46 +0000      784 bytes  test/mock/frames/context.html</tspan>
+<tspan x="10" y="14394">753.  2017-04-27 18:59:46 +0000     1974 bytes  test/mock/frames/e2e.html</tspan>
+<tspan x="10" y="14410">754.  2017-04-27 18:59:46 +0000     1952 bytes  test/mock/frames/frame-frame.html</tspan>
+<tspan x="10" y="14426">755.  2017-04-27 18:59:46 +0000      115 bytes  test/mock/frames/frame1.html</tspan>
+<tspan x="10" y="14442">756.  2017-04-27 18:59:46 +0000      414 bytes  test/mock/frames/nested0.html</tspan>
+<tspan x="10" y="14458">757.  2017-04-27 18:59:46 +0000      466 bytes  test/mock/frames/nested1.html</tspan>
+<tspan x="10" y="14474">758.  2017-04-27 18:59:46 +0000      368 bytes  test/mock/frames/nested2.html</tspan>
+<tspan x="10" y="14490">759.  2017-04-27 18:59:46 +0000      151 bytes  test/mock/frames/nocode.html</tspan>
+<tspan x="10" y="14506">760.  2017-04-27 18:59:46 +0000      819 bytes  test/mock/frames/responder.html</tspan>
+<tspan x="10" y="14522">761.  2017-04-27 18:59:46 +0000      420 bytes  test/mock/frames/results-timeout.html</tspan>
+<tspan x="10" y="14538">762.  2017-04-27 18:59:46 +0000      575 bytes  test/mock/frames/rule-error.html</tspan>
+<tspan x="10" y="14554">763.  2017-04-27 18:59:46 +0000      371 bytes  test/mock/frames/test.html</tspan>
+<tspan x="10" y="14570">764.  2017-04-27 18:59:46 +0000      658 bytes  test/mock/frames/throwing.html</tspan>
+<tspan x="10" y="14586">765.  2017-04-27 18:59:46 +0000      105 bytes  test/mock/frames/zombie-frame.html</tspan>
+<tspan x="10" y="14602">766.  2017-04-27 18:59:46 +0000      254 bytes  test/playground.html</tspan>
+<tspan x="10" y="14618">767.  2017-04-27 18:59:46 +0000     1985 bytes  test/rule-matches/aria-allowed-attr-matches.js</tspan>
+<tspan x="10" y="14634">768.  2017-04-27 18:59:46 +0000      943 bytes  test/rule-matches/aria-has-attr-matches.js</tspan>
+<tspan x="10" y="14650">769.  2017-04-27 18:59:46 +0000     8910 bytes  test/rule-matches/color-contrast-matches.js</tspan>
+<tspan x="10" y="14666">770.  2017-04-27 18:59:46 +0000     1742 bytes  test/rule-matches/index.html</tspan>
+<tspan x="10" y="14682">771.  2017-04-27 18:59:46 +0000     2237 bytes  test/rule-matches/p-as-heading-matches.js</tspan>
+<tspan x="10" y="14698">772.  2017-04-27 18:59:46 +0000     1552 bytes  test/runner.tmpl</tspan>
+<tspan x="10" y="14714">773.  2017-04-27 18:59:46 +0000      130 bytes  test/version.js</tspan>
+<tspan x="10" y="14730">774.  2017-04-27 18:59:46 +0000     2478 bytes  typings/axe-core/axe-core-tests.js</tspan>
+<tspan x="10" y="14746">775.  2017-04-27 18:59:46 +0000     2691 bytes  typings/axe-core/axe-core-tests.ts</tspan>
 </text>
 </svg>
